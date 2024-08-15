@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("fonts/Comfortaa-Regular.ttf");
+}
+
+/* Ajusta a imagem principal para preencher a tela */
+.ImagemPrincipal {
+    height: 300px; /* Define a altura desejada */
+    width: auto;   /* Ajusta a largura automaticamente para manter a proporção */
+    max-width: 100%; /* Garante que a largura não exceda a largura da tela */
+    display: block; /* Remove espaços em branco ao redor da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+/* Ajusta o cabeçalho para preencher a largura da tela */
+.Cabecario {
+    background-color: #7209B7;
+    height: 130px; /* Define a altura do cabeçalho */
+    width: 100%; /* Faz com que o cabeçalho ocupe toda a largura da tela */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+
+    h5 {
+        margin-left: 5%;
+        margin-top: 2%;
+        font-family: "Comfortaa";
+        font-size: 24px; /* Aumenta o tamanho da fonte */
+        color: white; /* Ajusta a cor da fonte para melhorar o contraste com o fundo */
+    }
+}
+
+/* Estiliza o corpo da página */
+body {
+    background-color: #757575; /* Define a cor de fundo do corpo */
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove preenchimento padrão do navegador */
+    font-family: Arial, sans-serif; /* Define uma fonte padrão */
+}
+
