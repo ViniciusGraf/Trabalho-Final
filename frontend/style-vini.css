@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("fonts/Comfortaa-Regular.ttf");
+}
+
+.lado{
+    width: 45%;
+    height: 1040px;
+    background: #7209B7;
+
+}
+
+body{
+    background-color: #2E2B2B;
+}
+
+.Login{
+    width: 134px;
+    height: 76px;
+    flex-shrink: 0;
+    border-radius: 42px 1px 0px 42px;
+    background: #2E2B2B;
+    border: #2E2B2B;
+    
+    color: aliceblue;
+    font-family: "Comfortaa";
+    font-size: 24px;
+    
+}
+
+.Cadrastrar{
+    width: 134px;
+    height: 76px;
+    flex-shrink: 0;
+    border-radius: 42px 1px 0px 42px;
+    background: #2E2B2B;
+    border: #2E2B2B;
+    
+    color: aliceblue;
+    font-family: "Comfortaa";
+    font-size: 20px;
+    
+}
+
+.Posicao-Login{
+        position: relative;
+        top: 30%; 
+        left: 88%;
+        padding: 10px;
+}
+
+.Posicao-Cadrasto{
+    position: relative;
+    top: 31%; 
+    left: 88%;
+    padding: 10px;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.lado-d{
+     width: 45%;
+     
+}
+.container{
+    display: flex;
+    margin: 0%;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
