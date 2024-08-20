@@ -1,6 +1,31 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Fonte customizada */
 @font-face {
   font-family: Comfortaa;
   src: url("fonts/Comfortaa-Regular.ttf");
+}
+
+/* Estilização geral */
+body {
+  background-color: #2e2b2b;
+}
+
+/* Estrutura principal */
+.container {
+  display: flex;
 }
 
 .lado {
@@ -9,23 +34,12 @@
   background: #7209b7;
 }
 
-body {
-  background-color: #2e2b2b;
+.lado-d {
+  width: 45%;
 }
 
-.Login {
-  width: 134px;
-  height: 76px;
-  margin-right: 20%;
-  flex-shrink: 0;
-  border-radius: 42px 1px 0px 42px;
-  background: #2e2b2b;
-  border: #2e2b2b;
-  color: aliceblue;
-  font-family: "Comfortaa";
-  font-size: 20px;
-}
-
+/* Botões */
+.Login,
 .Cadrastrar {
   width: 134px;
   height: 76px;
@@ -36,10 +50,18 @@ body {
   border: #2e2b2b;
   color: aliceblue;
   font-family: "Comfortaa";
+}
+
+.Login {
+  font-size: 20px;
+}
+
+.Cadrastrar {
   font-size: 16px;
   opacity: 0.7;
 }
 
+/* Posições */
 .Posicao-Login {
   position: relative;
   top: 30%;
@@ -54,46 +76,25 @@ body {
   padding: 10px;
 }
 
-
+/* Campos de entrada */
 .input {
-    text-align: center;
-    margin-left: 5%;
-    margin-right: 20px;
-    background-color: transparent;
-    border: none; /* Remove todas as bordas */
-    border-bottom: 2px solid aliceblue; /* Adiciona uma linha sublinhada */
-    color: aliceblue;
-    width: 200px; /* Ajuste o valor conforme necessário */
-    height: 1px; /* Ajuste o valor conforme necessário */
-    padding: 10px; /* Ajuste o valor conforme necessário */
-    border-radius: 0; /* Garante que o border-radius não afete a borda inferior */
-    outline: none; /* Remove o contorno ao focar no campo */
-  }
-  
-label{
-    font-family: comfortaa;
-    font-size: 18px;
-    color: aliceblue;
-}
-  
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid aliceblue;
+  color: aliceblue;
+  width: 200px;
+  height: 1px;
+  padding: 10px;
+  border-radius: 0;
+  outline: none;
 }
 
-.lado-d {
-  width: 45%;
-}
-
-.container {
-  display: flex;
-}
-
-html,
-body {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
+/* Rótulos */
+label {
+  font-family: Comfortaa;
+  font-size: 18px;
+  color: aliceblue;
 }
