@@ -1,26 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styleVini.css" />
     <title>CyberCores | Login</title>
+    <link rel="stylesheet" href="vini.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="lado">
-        <div class="Posicao-Login">
-          <button class="Login">Login</button>
-          <label for="Posicao-Login">Email: </label>
-          <input class="input" type="email" />
-        </div>
-        <div class="Posicao-Cadrasto">
-          <button class="Cadrastrar">Cadrastrar</button>
-          <label for="Posicao-Cadrasto">Senha: </label>
-          <input class="input" type="password" />
-        </div>
+
+
+    <div class="wrapper">
+
+
+      <!-- Login -->
+      <div id="loginForm" class="form active">
+          <form action="">
+              <h1>Login</h1>
+              <div class="input-box">
+                  <input type="text" placeholder="Usuário" required />
+                  <i class="bx bxs-user"></i>
+              </div>
+ 
+              <div class="input-box transition">
+                  <input type="password" placeholder="Senha" required />
+                  <i class="bx bxs-lock-alt"></i>
+              </div>
+              <div class="remember-forgot">
+                  <label><input type="checkbox" />Lembrar senha</label>
+                  <a href="#">Esqueceu a senha?</a>
+              </div>
+ 
+              <button type="submit" class="btn">Login</button>
+ 
+              <div class="register-link">
+                  <p>Não possui uma conta? <span id="showRegister" class="transition-button">Cadastre-se aqui</span></p>
+              </div>
+          </form>
       </div>
-      <div class="lado-d"></div>
+ 
+      <!-- Cadastro -->
+      <div id="registerForm" class="form">
+          <form action="">
+              <h1>Cadastre-se</h1>
+              <div class="input-box">
+                  <input type="text" placeholder="Usuário" required />
+                  <i class="bx bxs-user"></i>
+              </div>
+ 
+              <div class="input-box transition">
+                  <input type="text" placeholder="Email" required />
+                  <i class='bx bxs-envelope'></i>
+              </div>
+ 
+              <div class="input-box transition">
+                  <input type="password" placeholder="Senha" required />
+                  <i class="bx bxs-lock-alt"></i>
+              </div>
+              <div class="input-box transition">
+                  <input type="password" placeholder="Repita a senha" required />
+                  <i class="bx bxs-lock-alt"></i>
+              </div>
+ 
+              <div class="remember-forgot">
+                  <label><input type="checkbox" />Concordo com os termos do contrato</label>
+              </div>
+ 
+              <button type="submit" class="btn">Cadastre-se</button>
+ 
+              <div class="register-link">
+                  <p>Já possui uma conta? <span id="showLogin" class="transition-button">Login</span></p>
+              </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+
+
+  <script>
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      const showRegister = document.getElementById('showRegister');
+      const showLogin = document.getElementById('showLogin');
+
+
+      showRegister.addEventListener('click', () => {
+          loginForm.classList.remove('active');
+          registerForm.classList.add('active');
+      });
+
+
+      showLogin.addEventListener('click', () => {
+          registerForm.classList.remove('active');
+          loginForm.classList.add('active');
+      });
+  </script>
   </body>
 </html>
