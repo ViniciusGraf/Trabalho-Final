@@ -34,7 +34,12 @@
           <button type="submit" class="btn">Login</button>
 
           <div class="register-link">
-            <p>Não possui uma conta? <span id="showRegister" class="transition-button">Cadastre-se aqui</span></p>
+            <p>
+              Não possui uma conta?
+              <span id="showRegister" class="transition-button"
+                >Cadastre-se aqui</span
+              >
+            </p>
           </div>
         </form>
       </div>
@@ -50,7 +55,7 @@
 
           <div class="input-box transition">
             <input type="text" placeholder="Email" required />
-            <i class='bx bxs-envelope'></i>
+            <i class="bx bxs-envelope"></i>
           </div>
 
           <div class="input-box transition">
@@ -63,59 +68,67 @@
           </div>
 
           <div class="remember-forgot">
-            <label><input type="checkbox" id="termsCheckbox" />Concordo com os termos do contrato</label>
+            <label
+              ><input type="checkbox" id="termsCheckbox" />Concordo com os
+              termos do contrato</label
+            >
           </div>
 
           <!-- Mensagem de erro -->
-          <p id="error-message" style="color: red; display: none;">Faltou concordar com o termo</p>
+          <p id="error-message" style="color: red; display: none">
+            Faltou concordar com o termo
+          </p>
 
           <button type="submit" class="btn">Cadastre-se</button>
 
           <div class="register-link">
-            <p>Já possui uma conta? <span id="showLogin" class="transition-button">Login</span></p>
+            <p>
+              Já possui uma conta?
+              <span id="showLogin" class="transition-button">Login</span>
+            </p>
           </div>
         </form>
       </div>
     </div>
 
     <script>
-      const loginForm = document.getElementById('loginForm');
-      const registerForm = document.getElementById('registerForm');
-      const showRegister = document.getElementById('showRegister');
-      const showLogin = document.getElementById('showLogin');
-      const registerCheckbox = document.querySelector('#termsCheckbox');
-      const registerButton = document.querySelector('#registerForm .btn');
-      const errorMessage = document.getElementById('error-message');
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+      const showRegister = document.getElementById("showRegister");
+      const showLogin = document.getElementById("showLogin");
+      const registerCheckbox = document.querySelector("#termsCheckbox");
+      const registerButton = document.querySelector("#registerForm .btn");
+      const errorMessage = document.getElementById("error-message");
 
       // Alternar entre as telas de login e cadastro
-      showRegister.addEventListener('click', () => {
-        loginForm.classList.remove('active');
-        registerForm.classList.add('active');
+      showRegister.addEventListener("click", () => {
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
       });
 
-      showLogin.addEventListener('click', () => {
-        registerForm.classList.remove('active');
-        loginForm.classList.add('active');
+      showLogin.addEventListener("click", () => {
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
       });
 
       // Desabilitar o botão de cadastro inicialmente
       registerButton.disabled = true;
 
       // Habilitar o botão apenas se a checkbox estiver marcada
-      registerCheckbox.addEventListener('change', () => {
+      registerCheckbox.addEventListener("change", () => {
         if (registerCheckbox.checked) {
           registerButton.disabled = false;
-          errorMessage.style.display = 'none';
+          errorMessage.style.display = "none";
         } else {
           registerButton.disabled = true;
         }
       });
 
       // Mostrar a mensagem de erro se o formulário for submetido sem a checkbox marcada
-      registerForm.addEventListener('submit', (event) => {
+      registerForm.addEventListener("submit", (event) => {
         if (!registerCheckbox.checked) {
           event.preventDefault();
-          errorMessage.style.display = 'block';
+          errorMessage.style.display = "block";
         }
       });
     </script>
