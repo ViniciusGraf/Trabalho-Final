@@ -166,3 +166,11 @@ body {
 .transition-button:hover{
     text-decoration: underline;
 }
+
+#error-message {
+  color: red; 
+  text-shadow: 1px  0.5px black;
+  display: none;
+  margin-bottom: 5%;
+  font-size: 14px;
+}
