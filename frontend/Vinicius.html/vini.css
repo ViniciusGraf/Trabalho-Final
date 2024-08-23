@@ -114,6 +114,11 @@ body {
   font-weight: 600;
 }
 
+.wrapper .btn:hover {
+  background: #762fa575;
+  color: aliceblue;
+}
+
 
 .wrapper .register-link {
   font-size: 14.5px;
@@ -154,7 +159,7 @@ body {
 
 .transition-button {
     color: #ffff;
-        text-decoration: none;
+    text-decoration: none;
 }
 
 
