@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberCores | Login</title>
     <link rel="stylesheet" href="vini.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   </head>
   <body>
     <div class="wrapper">
-      <!-- Login -->
+      <!-- Tela de Login -->
       <div id="loginForm" class="form active">
         <form action="">
           <h1>Login</h1>
@@ -26,6 +23,7 @@
             <input type="password" placeholder="Senha" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
+
           <div class="remember-forgot">
             <label><input type="checkbox" />Lembrar senha</label>
             <a href="#">Esqueceu a senha?</a>
@@ -36,17 +34,15 @@
           <div class="register-link">
             <p>
               Não possui uma conta?
-              <span id="showRegister" class="transition-button"
-                >Cadastre-se aqui</span
-              >
+              <span id="showRegister" class="transition-button">Cadastre-se aqui</span>
             </p>
           </div>
         </form>
       </div>
 
-      <!-- Cadastro -->
+      <!-- Tela de Cadastro -->
       <div id="registerForm" class="form">
-        <form id="registerForm" action="">
+        <form id="registerFormForm" action="">
           <h1>Cadastre-se</h1>
           <div class="input-box">
             <input type="text" placeholder="Usuário" required />
@@ -62,24 +58,24 @@
             <input type="password" placeholder="Senha" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
+
           <div class="input-box transition">
             <input type="password" placeholder="Repita a senha" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
 
           <div class="remember-forgot">
-            <label
-              ><input type="checkbox" id="termsCheckbox" />Concordo com os
-              termos do contrato</label
-            >
+            <label>
+              <input type="checkbox" id="termsCheckbox" />Concordo com os termos do contrato
+            </label>
           </div>
 
           <!-- Mensagem de erro -->
-          <p id="error-message" style="color: red; display: none">
+          <p id="error-message" style="color: red; display: none;">
             Faltou concordar com o termo
           </p>
 
-          <button type="submit" class="btn">Cadastre-se</button>
+          <button type="submit" class="btn" id="registerButton">Cadastre-se</button>
 
           <div class="register-link">
             <p>
@@ -91,13 +87,15 @@
       </div>
     </div>
 
+    <!-- Scripts JavaScript -->
     <script>
+      // Seleção dos elementos do DOM
       const loginForm = document.getElementById("loginForm");
       const registerForm = document.getElementById("registerForm");
       const showRegister = document.getElementById("showRegister");
       const showLogin = document.getElementById("showLogin");
       const registerCheckbox = document.querySelector("#termsCheckbox");
-      const registerButton = document.querySelector("#registerForm .btn");
+      const registerButton = document.getElementById("registerButton");
       const errorMessage = document.getElementById("error-message");
 
       // Alternar entre as telas de login e cadastro
@@ -111,10 +109,7 @@
         loginForm.classList.add("active");
       });
 
-      // Desabilitar o botão de cadastro inicialmente
-      registerButton.disabled = true;
-
-      // Habilitar o botão apenas se a checkbox estiver marcada
+      // Habilitar o botão de cadastro apenas se a checkbox estiver marcada
       registerCheckbox.addEventListener("change", () => {
         if (registerCheckbox.checked) {
           registerButton.disabled = false;
@@ -124,8 +119,8 @@
         }
       });
 
-      // Mostrar a mensagem de erro se o formulário for submetido sem a checkbox marcada
-      registerForm.addEventListener("submit", (event) => {
+      // Mostrar a mensagem de erro e impedir o envio do formulário se a checkbox não estiver marcada
+      document.getElementById("registerFormForm").addEventListener("submit", (event) => {
         if (!registerCheckbox.checked) {
           event.preventDefault();
           errorMessage.style.display = "block";
