@@ -95,6 +95,19 @@ body {
   transition: 0.2 ease;
 }
 
+.teletransporte {
+  display: flex;
+  justify-content: space-between;
+  }
+  
+.navbar .teletransporte a:hover{
+  font-size: 1.17rem;
+  text-shadow: 0px 0px 10px #000;
+  transition: text-shadow 0.3s ease;
+  transition: 0.2 ease;
+  text-decoration: underline 2.3px;
+}
+
 .user-icon i {
   font-size: 35px;
 }
