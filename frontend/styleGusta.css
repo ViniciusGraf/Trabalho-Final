@@ -20,7 +20,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.3rem 10%;
+  padding: 1.3rem 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,7 +89,7 @@ body {
   transition: 0.2 ease;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   font-size: 1.17rem;
   text-shadow: 0px 0px 10px #000;
   transition: text-shadow 0.3s ease;
@@ -99,9 +99,9 @@ body {
 .teletransporte {
   display: flex;
   justify-content: space-between;
-  }
-  
-.navbar .teletransporte a:hover{
+}
+
+.navbar .teletransporte a:hover {
   font-size: 1.17rem;
   text-shadow: 0px 0px 10px #000;
   transition: text-shadow 0.3s ease;
@@ -109,8 +109,20 @@ body {
   text-decoration: underline 2.3px;
 }
 
+.user-icon {
+  display: flex;
+  align-items: center;
+}
+
 .user-icon i {
-  font-size: 35px;
+  font-size: 40px;
+}
+
+.user-name {
+  font-size: 1.15rem; 
+  color: aliceblue;
+  margin-left: 2rem; 
+  margin-top: 0.5rem; 
 }
 
 #check {
@@ -122,10 +134,10 @@ body {
   right: 5%;
   font-size: 2.8rem;
   color: aliceblue;
+
   cursor: pointer;
   display: none;
 }
-
 @media (max-width: 992px) {
   .header {
     padding: 1.3rem 5%;
@@ -170,7 +182,7 @@ body {
     display: block;
     font-size: 1.1rem;
     margin: 1.1rem;
-    text-align: center;
+    text-align: right;
     transform: translateY(-50px);
     opacity: 0;
     transition: 0.3s ease;
@@ -183,28 +195,28 @@ body {
   }
 }
 
-.inicio{
+.inicio {
   font-size: 1.5rem;
 }
 
-.inicio-titulo{
+.inicio-titulo {
   font-size: 2.25rem;
   line-height: 1.1;
   font-weight: 500;
   letter-spacing: -0.05em;
 }
 
-.inicio-descriçao{
+.inicio-descriçao {
   font-size: 0.9rem;
   opacity: 0.6;
   font-weight: 300;
   line-height: calc(1em + 0.5rem);
 }
 
-.lado-direito{
+.lado-direito {
   flex: 1;
 }
 
-.lado-esquerdo{
+.lado-esquerdo {
   flex: 1;
 }

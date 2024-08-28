@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 
 body {
   display: flex;
@@ -25,7 +23,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.3rem 10%;
+  padding: 1.3rem 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,20 +92,19 @@ body {
   transition: 0.2 ease;
 }
 
-  .navbar a:hover{
-    font-size: 1.17rem;
-    text-shadow: 0px 0px 10px #000;
-    transition: text-shadow 0.3s ease;
-    transition: 0.2 ease;
-    
-  }
+.navbar a:hover {
+  font-size: 1.17rem;
+  text-shadow: 0px 0px 10px #000;
+  transition: text-shadow 0.3s ease;
+  transition: 0.2 ease;
+}
 
-  .teletransporte {
+.teletransporte {
   display: flex;
   justify-content: space-between;
-  }
-  
-.navbar .teletransporte a:hover{
+}
+
+.navbar .teletransporte a:hover {
   font-size: 1.17rem;
   text-shadow: 0px 0px 10px #000;
   transition: text-shadow 0.3s ease;
@@ -115,8 +112,20 @@ body {
   text-decoration: underline 2.3px;
 }
 
+.user-icon {
+  display: flex;
+  align-items: center;
+}
+
 .user-icon i {
-  font-size: 35px;
+  font-size: 40px;
+}
+
+.user-name {
+  font-size: 1.15rem; 
+  color: aliceblue;
+  margin-left: 2rem; 
+  margin-top: 0.5rem; 
 }
 
 #check {
@@ -128,10 +137,10 @@ body {
   right: 5%;
   font-size: 2.8rem;
   color: aliceblue;
+
   cursor: pointer;
   display: none;
 }
-
 @media (max-width: 992px) {
   .header {
     padding: 1.3rem 5%;
@@ -154,7 +163,7 @@ body {
   #check:checked ~ .icons #close-icon {
     display: block;
   }
-
+  
   .navbar {
     position: absolute;
     top: 100%;
@@ -200,12 +209,10 @@ body {
   padding: 30px 40px;
 }
 
-
 .wrapper h1 {
   font-size: 36px;
   text-align: center;
 }
-
 
 .wrapper .input-box {
   position: relative;
@@ -213,7 +220,6 @@ body {
   height: 50px;
   margin: 30px 0;
 }
-
 
 .input-box input {
   width: 100%;
@@ -228,11 +234,9 @@ body {
   padding: 20px 45px 20px 20px;
 }
 
-
 .input-box input::placeholder {
   color: aliceblue;
 }
-
 
 .input-box i {
   position: absolute;
@@ -242,7 +246,6 @@ body {
   font-size: 20px;
 }
 
-
 .wrapper .remember-forgot {
   display: flex;
   justify-content: space-between;
@@ -250,23 +253,19 @@ body {
   margin: -15px 0 15px;
 }
 
-
 .remember-forgot label input {
   accent-color: #ffff;
   margin-right: 3px;
 }
-
 
 .remember-forgot a {
   color: #ffff;
   text-decoration: none;
 }
 
-
 .remember-forgot a:hover {
   text-decoration: underline;
 }
-
 
 .wrapper .btn {
   width: 100%;
@@ -280,13 +279,16 @@ body {
   font-size: 16px;
   color: #333;
   font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.wrapper .color-changing {
+  background: #ffff; /* Cor inicial */
 }
 
 .wrapper .btn:hover {
-  background: #762fa575;
   color: aliceblue;
 }
-
 
 .wrapper .register-link {
   font-size: 14.5px;
@@ -294,50 +296,43 @@ body {
   margin: 20px 0 15px;
 }
 
-
 .register-link p a {
   color: #ffff;
   text-decoration: none;
   font-weight: 600;
 }
 
-
 .register-link p a:hover {
   text-decoration: underline;
 }
 
-
 .form-container {
-    width: 300px;
-    margin: 50px auto;
+  width: 300px;
+  margin: 50px auto;
 }
+
 .form {
-    display: none;
+  display: none;
 }
+
 .form.active {
-    display: block;
+  display: block;
 }
-.transition-button {
-    margin-top: 10px;
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
-}
-
 
 .transition-button {
-    color: #ffff;
-    text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #ffff;
+  text-decoration: none;
 }
 
-
-.transition-button:hover{
-    text-decoration: underline;
+.transition-button:hover {
+  text-decoration: underline;
 }
 
 #error-message {
-  color: red; 
-  text-shadow: 1px  0.5px black;
+  color: red;
+  text-shadow: 1px 0.5px black;
   display: none;
   margin-bottom: 5%;
   font-size: 14px;

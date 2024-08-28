@@ -6,26 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberCores | Login</title>
     <link rel="stylesheet" href="vini.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/CyberCores_circular.png" type="image/x-icon" />
   </head>
-  <body>
 
+  <body>
     <!-- Navbar -->
     <header class="header">
-      <a href="#" class="logo">CyberCores</a>
-
+      <a href="index.html" class="logo">CyberCores</a>
+    
       <input type="checkbox" id="check" />
       <label for="check" class="icons">
         <i class="bx bx-menu" id="menu-icon"></i>
         <i class="bx bxs-x-circle" id="close-icon"></i>
       </label>
-
+    
       <nav class="navbar">
-        <div class="teletransporte">
-        <a href="index.html" style="--i:0;">Inicio</a>
-      </div>
+        <a href="#" class="user-icon">
+          <i class="bx bxs-cart"></i>
+        </a>
+        <a href="#" class="user-icon">
+          <i class="bx bxs-heart"></i>
+        </a>
         <a href="login.html" class="user-icon">
-          <i class='bx bxs-user-circle'></i>
+          <i class="bx bxs-user-circle"></i>
+          <span class="user-name">Nome Usuário</span>
         </a>
       </nav>
     </header>
@@ -50,12 +58,14 @@
             <a href="#">Esqueceu a senha?</a>
           </div>
 
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn color-changing">Login</button>
 
           <div class="register-link">
             <p>
               Não possui uma conta?
-              <span id="showRegister" class="transition-button">Cadastre-se aqui</span>
+              <span id="showRegister" class="transition-button"
+                >Cadastre-se aqui</span
+              >
             </p>
           </div>
         </form>
@@ -87,7 +97,8 @@
 
           <div class="remember-forgot">
             <label>
-              <input type="checkbox" id="termsCheckbox" />Concordo com os termos do contrato
+              <input type="checkbox" id="termsCheckbox" />Concordo com os termos
+              do contrato
             </label>
           </div>
 
@@ -96,7 +107,9 @@
             <b>Concorde com os termos</b>
           </p>
 
-          <button type="submit" class="btn" id="registerButton">Cadastre-se</button>
+          <button type="submit" class="btn color-changing" id="registerButton">
+            Cadastre-se
+          </button>
 
           <div class="register-link">
             <p>
@@ -140,12 +153,29 @@
         }
       });
 
-      // Mostrar a mensagem de erro e impedir o envio do formulário se a checkbox não estiver marcada
-      document.getElementById("registerFormForm").addEventListener("submit", (event) => {
-        if (!registerCheckbox.checked) {
-          event.preventDefault();
-          errorMessage.style.display = "block";
-        }
+      document
+        .getElementById("registerFormForm")
+        .addEventListener("submit", (event) => {
+          if (!registerCheckbox.checked) {
+            event.preventDefault();
+            errorMessage.style.display = "block";
+          }
+        });
+
+      const colorChangingButtons = document.querySelectorAll(".color-changing");
+      const colors = ["#f547ac", "#7a42f5", "#b93ef2", "#d252d8"];
+
+      colorChangingButtons.forEach((button) => {
+        let currentColorIndex = 0;
+
+        button.addEventListener("mouseover", () => {
+          currentColorIndex = (currentColorIndex + 1) % colors.length;
+          button.style.backgroundColor = colors[currentColorIndex];
+        });
+
+        button.addEventListener("mouseleave", () => {
+          button.style.backgroundColor = "#ffff";
+        });
       });
     </script>
   </body>
