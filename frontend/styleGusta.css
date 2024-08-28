@@ -12,10 +12,11 @@ body {
   background: url("img/imagem\ paisage.jpg") no-repeat;
   background-size: cover;
   background-position: top right;
+  overflow: hidden;
 }
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -180,4 +181,30 @@ body {
     opacity: 1;
     transition-delay: calc(0.15s * var(--i));
   }
+}
+
+.inicio{
+  font-size: 1.5rem;
+}
+
+.inicio-titulo{
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.inicio-descriçao{
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-weight: 300;
+  line-height: calc(1em + 0.5rem);
+}
+
+.lado-direito{
+  flex: 1;
+}
+
+.lado-esquerdo{
+  flex: 1;
 }
