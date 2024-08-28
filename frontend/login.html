@@ -1,152 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberCores | Login</title>
-    <link rel="stylesheet" href="vini.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCores | Login</title>
+  <link rel="stylesheet" href="vini.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="img/CyberCores.png" type="image/x-icon">
+</head>
 
-    <!-- Navbar -->
-    <header class="header">
-      <a href="#" class="logo">CyberCores</a>
+<body>
+  <!-- Navbar -->
+  <header class="header">
+    <a href="index.html" class="logo">CyberCores</a>
 
-      <input type="checkbox" id="check" />
-      <label for="check" class="icons">
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <i class="bx bxs-x-circle" id="close-icon"></i>
-      </label>
+    <input type="checkbox" id="check" />
+    <label for="check" class="icons">
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <i class="bx bxs-x-circle" id="close-icon"></i>
+    </label>
 
-      <nav class="navbar">
-        <div class="teletransporte">
-        <a href="index.html" style="--i:0;">Inicio</a>
+    <nav class="navbar">
+      <a href="login.html" class="user-icon">
+        <i class='bx bxs-user-circle'></i>
+      </a>
+      <div class="teletransporte">
+        <a href="#" style="--i:0;">Nome Usuário</a>
       </div>
-        <a href="login.html" class="user-icon">
-          <i class='bx bxs-user-circle'></i>
-        </a>
-      </nav>
-    </header>
+    </nav>
+  </header>
 
-    <div class="wrapper">
-      <!-- Tela de Login -->
-      <div id="loginForm" class="form active">
-        <form action="">
-          <h1>Login</h1>
-          <div class="input-box">
-            <input type="text" placeholder="Usuário" required />
-            <i class="bx bxs-user"></i>
-          </div>
+  <div class="wrapper">
+    <!-- Tela de Login -->
+    <div id="loginForm" class="form active">
+      <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Usuário" required />
+          <i class="bx bxs-user"></i>
+        </div>
 
-          <div class="input-box transition">
-            <input type="password" placeholder="Senha" required />
-            <i class="bx bxs-lock-alt"></i>
-          </div>
+        <div class="input-box transition">
+          <input type="password" placeholder="Senha" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
 
-          <div class="remember-forgot">
-            <label><input type="checkbox" />Lembrar senha</label>
-            <a href="#">Esqueceu a senha?</a>
-          </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Lembrar senha</label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
 
-          <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn color-changing">Login</button>
 
-          <div class="register-link">
-            <p>
-              Não possui uma conta?
-              <span id="showRegister" class="transition-button">Cadastre-se aqui</span>
-            </p>
-          </div>
-        </form>
-      </div>
-
-      <!-- Tela de Cadastro -->
-      <div id="registerForm" class="form">
-        <form id="registerFormForm" action="">
-          <h1>Cadastre-se</h1>
-          <div class="input-box">
-            <input type="text" placeholder="Usuário" required />
-            <i class="bx bxs-user"></i>
-          </div>
-
-          <div class="input-box transition">
-            <input type="email" placeholder="Email" required />
-            <i class="bx bxs-envelope"></i>
-          </div>
-
-          <div class="input-box transition">
-            <input type="password" placeholder="Senha" required />
-            <i class="bx bxs-lock-alt"></i>
-          </div>
-
-          <div class="input-box transition">
-            <input type="password" placeholder="Repita a senha" required />
-            <i class="bx bxs-lock-alt"></i>
-          </div>
-
-          <div class="remember-forgot">
-            <label>
-              <input type="checkbox" id="termsCheckbox" />Concordo com os termos do contrato
-            </label>
-          </div>
-
-          <!-- Mensagem de erro -->
-          <p id="error-message">
-            <b>Concorde com os termos</b>
+        <div class="register-link">
+          <p>
+            Não possui uma conta?
+            <span id="showRegister" class="transition-button">Cadastre-se aqui</span>
           </p>
-
-          <button type="submit" class="btn" id="registerButton">Cadastre-se</button>
-
-          <div class="register-link">
-            <p>
-              Já possui uma conta?
-              <span id="showLogin" class="transition-button">Login</span>
-            </p>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-      // Seleção dos elementos do DOM
-      const loginForm = document.getElementById("loginForm");
-      const registerForm = document.getElementById("registerForm");
-      const showRegister = document.getElementById("showRegister");
-      const showLogin = document.getElementById("showLogin");
-      const registerCheckbox = document.querySelector("#termsCheckbox");
-      const registerButton = document.getElementById("registerButton");
-      const errorMessage = document.getElementById("error-message");
+    <!-- Tela de Cadastro -->
+    <div id="registerForm" class="form">
+      <form id="registerFormForm" action="">
+        <h1>Cadastre-se</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Usuário" required />
+          <i class="bx bxs-user"></i>
+        </div>
 
-      // Alternar entre as telas de login e cadastro
-      showRegister.addEventListener("click", () => {
-        loginForm.classList.remove("active");
-        registerForm.classList.add("active");
+        <div class="input-box transition">
+          <input type="email" placeholder="Email" required />
+          <i class="bx bxs-envelope"></i>
+        </div>
+
+        <div class="input-box transition">
+          <input type="password" placeholder="Senha" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="input-box transition">
+          <input type="password" placeholder="Repita a senha" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="remember-forgot">
+          <label>
+            <input type="checkbox" id="termsCheckbox" />Concordo com os termos do contrato
+          </label>
+        </div>
+
+        <!-- Mensagem de erro -->
+        <p id="error-message">
+          <b>Concorde com os termos</b>
+        </p>
+
+        <button type="submit" class="btn color-changing" id="registerButton">Cadastre-se</button>
+
+        <div class="register-link">
+          <p>
+            Já possui uma conta?
+            <span id="showLogin" class="transition-button">Login</span>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Seleção dos elementos do DOM
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const showRegister = document.getElementById("showRegister");
+    const showLogin = document.getElementById("showLogin");
+    const registerCheckbox = document.querySelector("#termsCheckbox");
+    const registerButton = document.getElementById("registerButton");
+    const errorMessage = document.getElementById("error-message");
+
+    // Alternar entre as telas de login e cadastro
+    showRegister.addEventListener("click", () => {
+      loginForm.classList.remove("active");
+      registerForm.classList.add("active");
+    });
+
+    showLogin.addEventListener("click", () => {
+      registerForm.classList.remove("active");
+      loginForm.classList.add("active");
+    });
+
+    // Habilitar o botão de cadastro apenas se a checkbox estiver marcada
+    registerCheckbox.addEventListener("change", () => {
+      if (registerCheckbox.checked) {
+        registerButton.disabled = false;
+        errorMessage.style.display = "none";
+      } else {
+        registerButton.disabled = true;
+      }
+    });
+
+    document.getElementById("registerFormForm").addEventListener("submit", (event) => {
+      if (!registerCheckbox.checked) {
+        event.preventDefault();
+        errorMessage.style.display = "block";
+      }
+    });
+
+    const colorChangingButtons = document.querySelectorAll('.color-changing');
+    const colors = ['#f547ac', '#7a42f5', '#b93ef2', '#d252d8'];
+    
+    
+    colorChangingButtons.forEach(button => {
+      let currentColorIndex = 0;
+
+      button.addEventListener('mouseover', () => {
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        button.style.backgroundColor = colors[currentColorIndex];
       });
 
-      showLogin.addEventListener("click", () => {
-        registerForm.classList.remove("active");
-        loginForm.classList.add("active");
+      button.addEventListener('mouseleave', () => {
+        button.style.backgroundColor = '#ffff';
       });
-
-      // Habilitar o botão de cadastro apenas se a checkbox estiver marcada
-      registerCheckbox.addEventListener("change", () => {
-        if (registerCheckbox.checked) {
-          registerButton.disabled = false;
-          errorMessage.style.display = "none";
-        } else {
-          registerButton.disabled = true;
-        }
-      });
-
-      // Mostrar a mensagem de erro e impedir o envio do formulário se a checkbox não estiver marcada
-      document.getElementById("registerFormForm").addEventListener("submit", (event) => {
-        if (!registerCheckbox.checked) {
-          event.preventDefault();
-          errorMessage.style.display = "block";
-        }
-      });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>

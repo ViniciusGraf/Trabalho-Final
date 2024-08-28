@@ -13,13 +13,16 @@ body {
   background-size: cover;
   background-position: top right;
 }
+.shortcut {
+  border-radius: 50%;
+}
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.3rem 10%;
+  padding: 1.3rem 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,7 +172,7 @@ body {
     display: block;
     font-size: 1.1rem;
     margin: 1.1rem;
-    text-align: center;
+    text-align: right;
     transform: translateY(-50px);
     opacity: 0;
     transition: 0.3s ease;
@@ -181,3 +184,4 @@ body {
     transition-delay: calc(0.15s * var(--i));
   }
 }
+
