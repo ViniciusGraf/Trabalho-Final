@@ -182,24 +182,10 @@ body {
   }
 }
     
-.container {
+section {
   display: flex;
   flex: 1; /* Faz o contêiner ocupar todo o espaço restante */
   height: calc(100vh - 90px); /* Subtrai a altura da navbar */
   margin-top: 90px; /* Altura da navbar */
-}
-
-.left-side, .right-side {
-  flex: 1; /* Dividir igualmente */
-  padding: 50px;
-  align-content: center;
-}
-
-
-.imagem {
-    background-color: aliceblue;
-    height: 90%;
-    width: 90%;
-    border-radius: 45px;
-    padding: 8%;
+  margin-left: 100px;
 }

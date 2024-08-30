@@ -4,51 +4,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberCores | Login</title>
+    <title>CyberCores | Produto</title>
     <link rel="stylesheet" href="produtos.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="img/CyberCores_circular.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="img/CyberCores_circular.png"
+      type="image/x-icon"
+    />
   </head>
 
   <body>
     <!-- Navbar -->
- <header class="header">
-    <a href="index.html" class="logo">CyberCores</a>
-  
-    <input type="checkbox" id="check" />
-    <label for="check" class="icons">
-      <i class="bx bx-menu" id="menu-icon"></i>
-      <i class="bx bxs-x-circle" id="close-icon"></i>
-    </label>
-  
-    <nav class="navbar">
-      <a href="#" class="user-icon">
-        <i class="bx bxs-cart"></i>
-      </a>
-      <a href="#" class="user-icon">
-        <i class="bx bxs-heart"></i>
-      </a>
-      <a href="login.html" class="user-icon">
-        <i class="bx bxs-user-circle"></i>
-        <span class="user-name">Nome Usuário</span>
-      </a>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="left-side">
-        <div class="imagem">
-                <img src="img/pcgamer.jpg" alt="">
+    <header class="header">
+      <a href="index.html" class="logo">CyberCores</a>
+
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bxs-x-circle" id="close-icon"></i>
+      </label>
+
+      <nav class="navbar">
+        <a href="#" class="user-icon">
+          <i class="bx bxs-cart"></i>
+        </a>
+        <a href="#" class="user-icon">
+          <i class="bx bxs-heart"></i>
+        </a>
+        <a href="login.html" class="user-icon">
+          <i class="bx bxs-user-circle"></i>
+          <span class="user-name">Nome Usuário</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- produtos -->
+      <section>
+        <div class="card-wrapper">
+          <div class="card">
+            <!-- card left -->
+            <div class="product-imgsd">
+              <div class="img-display">
+                <div class="img-showcase">
+                  <img src="img/pcgamer.jpeg" alt="pc fodão" />
+                  
+                  <img src="img/pcgamer2.jpeg" alt="pc fodão" />
+                  
+                  <img src="img/pcgamer3.jpeg" alt="pc fodão" />
+                </div>
+              </div>
+              <div class="img-select">
+                <div class="img-item">
+                  <a href="#" data-id="1">
+                    <img src="img/pcgamer.jpeg" alt="">
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="1">
+                    <img src="img/pcgamer2.jpeg" alt="">
+                  </a>
+                </div>
+                <div class="img-item">
+                  <a href="#" data-id="1">
+                    <img src="img/pcgamer3.jpeg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- card right -->
+             <div class="product-content">
+                <h2 class="product-title">Pc Super mega potente 3000</h2>
+                <a href="#" class="product-link">visite o nosso site</a>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                </div>
+             </div>
+          </div>
         </div>
-    </div>
-        <div class="right-side">
-
-
-        </div>
-    </div>
-
-    </div>
-</body>
+      </section>
+    <script src="script.js"></script>
+  </body>
 </html>
