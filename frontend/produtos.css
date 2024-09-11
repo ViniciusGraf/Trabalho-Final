@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: gray;
+  background: #ffff;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -263,9 +263,123 @@ img {
   font-size: 0.9rem;
   display: inline-block;
   margin-bottom: 0.5rem;
-  background: rgb(119, 16, 119);
+  background: #7a42f5;
   color: aliceblue;
   padding: 0 0.3rem;
   transition: all 0.5 ease;
+  border-radius: 5px;
 }
+
+.product-link:hover {
+  opacity: 0.9;
+}
+
+.product-rating {
+  color: #ffc107;
+}
+
+.product-rating span {
+  font-weight: 600;
+  color: #252525
+}
+
+.product-price {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.product-price span {
+  font-weight: 400;
+}
+
+.last-price span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.new-price span {
+  color: #7a42f5
+}
+
+.product-detail h2 {
+  text-transform: capitalize;
+  color: #12263a;
+  padding-bottom: 0.6rem;
+}
+
+.product-detail p {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+}
+
+.product-detail ul {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.product-detail ul li {
+  margin: 0;
+  list-style: none;
+  background: url(img/check-circle-solid-24.png) left center no-repeat;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.product-detail ul li span {
+  font-weight: 400;
+}
+
+.purchase-info {
+  margin: 1.5rem 0;
+}
+
+.purchase-info input,
+.purchase-info .btn {
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.purchase-info input{
+  width: 60px;
+  }
+  .purchase-info .btn {
+  cursor: pointer;
+  color: #ffff
+  }
+  .purchase-info.btn:first-of-type{
+  background:#256eff;
+  }
+  .purchase-info .btn:last-of-type{
+  background: #7a42f5
+  }
+  .purchase-info.btn:hover{
+  opacity: 0.9;
+  }
+  .social-links{
+  display: flex;
+  align-items: center;
+  }
+  .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #000;
+  border: 1px solid #000;
+  margin: 0 0.2rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.8rem;
+  }
 
