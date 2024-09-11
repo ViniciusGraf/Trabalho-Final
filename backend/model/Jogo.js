@@ -20,7 +20,7 @@ Produto.init({
     }
 }, {
     sequelize,
-    modelName: 'produto',
+    modelName: 'produto', // Tem que ser o nome da tabela
     timestamps: false
 });
 
