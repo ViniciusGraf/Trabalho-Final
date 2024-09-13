@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: #ffff;
+  /* background: linear-gradient(135deg,#5312e0, #6729ec, #7a42f5, #b583f6, #d0b2f8 ); Gradiente do roxo escuro para um roxo mais claro */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -340,7 +340,7 @@ img {
 
 .purchase-info input,
 .purchase-info .btn {
-  border: 1.5px solid #ddd;
+  border: 1.5px solid#7a42f5;
   border-radius: 25px;
   text-align: center;
   padding: 0.45rem 0.8rem;
@@ -368,18 +368,51 @@ img {
   .social-links{
   display: flex;
   align-items: center;
+  margin-top: 1rem;
+  }
+
+  .social-links i {
+    font-size: 23px;
   }
   .social-links a {
-  display: flex;
+  display: inline-flex; /* Exibe os ícones em linha */
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  color: #000;
-  border: 1px solid #000;
-  margin: 0 0.2rem;
+  color: #7a42f5;
+  border: 1px solid #7a42f5;
+  margin: 0 0.2rem; /* Espaçamento entre os ícones */
   border-radius: 50%;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1.2rem; /* Ajusta o tamanho dos ícones */
+  transition: background 0.3s, color 0.3s;
   }
 
+.social-links a:hover {
+  background: #7a42f5;
+  border-color: transparent;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+    }
+    .card-wrapper {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .product-imgs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .product-content {
+      padding-top: 0;
+    }
+}
