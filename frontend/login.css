@@ -122,10 +122,10 @@ body {
 }
 
 .user-name {
-  font-size: 1.15rem; 
+  font-size: 1.15rem;
   color: aliceblue;
-  margin-left: 2rem; 
-  margin-top: 0.5rem; 
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
 
 #check {
@@ -163,7 +163,7 @@ body {
   #check:checked ~ .icons #close-icon {
     display: block;
   }
-  
+
   .navbar {
     position: absolute;
     top: 100%;
