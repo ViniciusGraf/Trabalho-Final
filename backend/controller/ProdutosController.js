@@ -1,11 +1,11 @@
-const Produto = require('../model/Produto');
-//const EntradaEstoque = require('../models/EntradaEstoque');
-//const SaidaEstoque = require('../models/SaidaEstoque');
+const Produtos = require('../model/Produtos');
+// const EntradaEstoque = require('../models/EntradaEstoque');
+// const SaidaEstoque = require('../models/SaidaEstoque');
 
-const ProdutoController = {
-    createProduto: async (req, res) => {
+const ProdutosController = {
+    createProdutos: async (req, res) => {
         try {
-            const novoProduto = await Produto.create(req.body);
+            const novoProduto = await Produtos.create(req.body);
             res.json(novoProduto);
         } catch (error) {
             res.status(500).send(error.message);
@@ -14,16 +14,16 @@ const ProdutoController = {
 
     getAllProdutos: async (req, res) => {
         try {
-            const produtos = await Produto.findAll();
+            const produtos = await Produtos.findAll();
             res.json(produtos);
         } catch (error) {
             res.status(500).send(error.message);
         }
     },
 
-    getProdutoById: async (req, res) => {
+    getProdutosById: async (req, res) => {
         try {
-            const produto = await Produto.findByPk(req.params.id);
+            const produto = await Produtos.findByPk(req.params.id);
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
@@ -33,9 +33,9 @@ const ProdutoController = {
         }
     },
 
-    updateProduto: async (req, res) => {
+    updateProdutos: async (req, res) => {
         try {
-            const produto = await Produto.findByPk(req.params.id);
+            const produto = await Produtos.findByPk(req.params.id);
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
@@ -46,9 +46,9 @@ const ProdutoController = {
         }
     },
 
-    deleteProduto: async (req, res) => {
+    deleteProdutos: async (req, res) => {
         try {
-            const produto = await Produto.findByPk(req.params.id);
+            const produto = await Produtos.findByPk(req.params.id);
             if (!produto) {
                 return res.status(404).send('Produto não encontrado');
             }
@@ -58,10 +58,6 @@ const ProdutoController = {
             res.status(500).send(error.message);
         }
     },
-
-    // Implementação das funções de controle de estoque
-    // registrarEntrada e registrarSaida
-    // ... (a ser implementado)
 };
 
-module.exports = ProdutoController;
+module.exports = ProdutosController;
