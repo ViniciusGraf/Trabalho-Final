@@ -1,56 +1,59 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-const Usuario = require('./Usuario');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/database");
+const Usuario = require("./Usuario");
 
-class Endereco extends Model {}
+class Enderec extends Model {}
 
-Endereco.init({
+Endereco.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     usuario_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Usuario,
-            key: 'id'
-        }
+      type: DataTypes.INTEGER,
+      references: {
+        model: Usuario,
+        key: "id",
+      },
     },
     rua: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     numero: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     complemento: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     bairro: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     cidade: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     estado: {
-        type: DataTypes.STRING(2),
-        allowNull: false
+      type: DataTypes.STRING(2),
+      allowNull: false,
     },
     cep: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-}, {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
     sequelize,
-    modelName: 'enderecos', 
-    timestamps: false
-});
+    modelName: "enderecos",
+    timestamps: false,
+  }
+);
 
-Endereco.belongsTo(Usuario, { foreignKey: 'usuario_id' });
-Usuario.hasMany(Endereco, { foreignKey: 'usuario_id' });
+Endereco.belongsTo(Usuario, { foreignKey: "usuario_id" });
+Usuario.hasMany(Endereco, { foreignKey: "usuario_id" });
 
 module.exports = Endereco;
