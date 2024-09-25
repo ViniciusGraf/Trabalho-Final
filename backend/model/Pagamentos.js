@@ -1,40 +1,37 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-class Endereco extends Model {}
+class Pagamento extends Model {}
 
-Endereco.init(
+Pagamento.init(
   {
-    id: {
+    idpagamentos: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    Endereco_id: {
+    usuarios_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Endereco,
-        key: "id",
-      },
+      allowNull: false,
     },
     valor: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    data_Endereco: {
-      type: DataTypes.DATE,
+    metodoPagamento: {
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
-    status: {
-      type: DataTypes.STRING,
+    statusPagamento: {
+      type: DataTypes.STRING(20),
       allowNull: false,
     },
   },
   {
     sequelize,
-    modelName: "Enderecos",
+    modelName: "pagamento",
     timestamps: false,
   }
 );
 
-module.exports = Endereco;
+module.exports = Pagamento;

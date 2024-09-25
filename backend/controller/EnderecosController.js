@@ -1,12 +1,10 @@
 const Enderecos = require("../model/Enderecos");
-// const EntradaEstoque = require('../models/EntradaEstoque');
-// const SaidaEstoque = require('../models/SaidaEstoque');
 
 const EnderecosController = {
   createEndereco: async (req, res) => {
     try {
       const novoEndereco = await Enderecos.create(req.body);
-      res.json(novoEndereco);
+      res.status(201).json(novoEndereco); // Use 201 para recurso criado
     } catch (error) {
       res.status(500).send(error.message);
     }

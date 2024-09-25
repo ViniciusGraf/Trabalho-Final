@@ -19,6 +19,16 @@ Produtos.init(
     preco: {
       type: DataTypes.DECIMAL(10, 2),
     },
+    estoque: {
+      type: DataTypes.INTEGER
+    },
+    categoria: {
+      type: DataTypes.STRING
+    },
+    marca: {
+      type: DataTypes.STRING
+    },
+
   },
   {
     sequelize,

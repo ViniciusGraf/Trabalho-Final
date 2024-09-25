@@ -5,7 +5,7 @@ class Usuario extends Model {}
 
 Usuario.init(
   {
-    id: {
+    idusuarios: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -26,7 +26,7 @@ Usuario.init(
     telefone: {
       type: DataTypes.STRING,
     },
-    endereco: {
+    endereco_id: {
       type: DataTypes.STRING,
     },
   },
