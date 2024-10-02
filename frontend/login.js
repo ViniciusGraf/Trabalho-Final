@@ -53,4 +53,42 @@ colorChangingButtons.forEach((button) => {
   });
 });
 
+// Cadastro de usuarioss
+function cadastrarUsuarios() {
+  // Captura os valores dos inputs
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+  const senhaR = document.getElementById('senhaR').value;
 
+  // Declare a variável Usuarios aqui
+  let Usuarios;
+
+  if (senha === senhaR) {
+    // Cria o objeto com os dados
+    Usuarios = {
+      nome: nome,
+      email: email,
+      senha: senha,
+    };
+
+    // Faz a solicitação POST para o backend
+    fetch('http://localhost:3000/api/usuarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(Usuarios)
+    })
+      .then(response => response.json())
+      .then(usuarios => {
+        console.log('usuários cadastrados com sucesso:', usuarios);
+        window.location.href = "index.html";
+      })
+      .catch(error => {
+        alert('Erro ao cadastrar');
+      });
+  } else {
+    alert("Senhas estão diferentes");
+  }
+}

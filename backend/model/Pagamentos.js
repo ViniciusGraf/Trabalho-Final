@@ -5,7 +5,7 @@ class Pagamento extends Model {}
 
 Pagamento.init(
   {
-    idpagamentos: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,

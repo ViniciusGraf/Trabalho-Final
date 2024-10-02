@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-class Usuario extends Model {}
+class Usuarios extends Model {}
 
-Usuario.init(
+Usuarios.init(
   {
-    idusuarios: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -25,9 +25,11 @@ Usuario.init(
     },
     telefone: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
     endereco_id: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
@@ -37,4 +39,4 @@ Usuario.init(
   }
 );
 
-module.exports = Usuario;
+module.exports = Usuarios;
