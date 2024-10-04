@@ -1,184 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberCores</title>
     <link rel="stylesheet" href="index.css" />
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
     />
     <link
-      rel="shortcut icon"
-      href="img/CyberCores_circular.png"
-      type="image/x-icon"
+        rel="shortcut icon"
+        href="img/CyberCores_circular.png"
+        type="image/x-icon"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
     />
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="header">
-      <a href="index.html" class="logo">CyberCores</a>
+        <a href="index.html" class="logo">CyberCores</a>
 
-      <input type="checkbox" id="check" />
-      <label for="check" class="icons">
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <i class="bx bxs-x-circle" id="close-icon"></i>
-      </label>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bxs-x-circle" id="close-icon"></i>
+        </label>
 
-      <nav class="navbar">
-        <a href="#" class="user-icon" id="carrinho">
-          <i class="bx bxs-cart"></i>
-        </a>
-        <a href="#" class="user-icon" id="coração">
-          <i class="bx bxs-heart"></i>
-        </a>
-        <a href="login.html" class="user-icon">
-          <i class="bx bxs-user-circle"></i>
-          <span class="user-name">Usuário</span>
-        </a>
-      </nav>
+        <nav class="navbar">
+            <a href="#" class="user-icon" id="carrinho">
+                <i class="bx bxs-cart"></i>
+            </a>
+            <a href="#" class="user-icon" id="coração">
+                <i class="bx bxs-heart"></i>
+            </a>
+            <a href="login.html" class="user-icon">
+                <i class="bx bxs-user-circle"></i>
+                <span class="user-name">Usuário</span>
+            </a>
+        </nav>
     </header>
 
     <section class="main-home">
-      <div class="main-text">
-        <h5>Bem-vindo à CyberCores!</h5>
-        <h1>
-          Computadores de Alta Performance <br />
-          com as Melhores Peças do Mercado
-        </h1>
-        <p>
-          Eleve sua experiência ao próximo nível. Potência, velocidade e
-          inovação em um só lugar.
-        </p>
-        <a href="#Produtos" class="main-btn">
-          Compre Agora
-          <i class="bx bx-right-arrow-alt"></i>
-        </a>
-      </div>
-      <div class="main-image"></div>
+        <div class="main-text">
+            <h5>Bem-vindo à CyberCores!</h5>
+            <h1>
+                Computadores de Alta Performance <br />
+                com as Melhores Peças do Mercado
+            </h1>
+            <p>
+                Eleve sua experiência ao próximo nível. Potência, velocidade e
+                inovação em um só lugar.
+            </p>
+            <a href="#trending" class="main-btn">
+                Compre Agora
+                <i class="bx bx-right-arrow-alt"></i>
+            </a>
+        </div>
+        <div class="main-image"></div>
     </section>
 
     <section class="trending-product" id="trending">
-      <div class="center-text">
-        <h2><span>Produtos</span> mais vendidos</h2>
-      </div>
-
-      <div id="Produtos" class="products">
-        <!-- Produto 1 -->
-        <div class="row">
-          <a href="produtos.html">
-          <img
-            src="img/pcgamer.jpeg"
-            alt="Imagem do produto"
-            href="produtos.html"
-          />
-          <div class="product-text">
-            <h5>Promoção</h5>
-          </div>
-          <div class="heart-icon">
-            <i class="bx bx-cart"></i>
-            <i class="bx bx-heart"></i>
-          </div>
-          <div class="descricao">pc muito foda que roda tudo</div>
-          <div class="rating">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star-half"></i>
-          </div>
-          <div class="price">
-            <p>R$2500 - 3500</p>
-          </div>
-        </a>
-        </div>
-        <!-- Produto 2 -->
-        <div class="row">
-          <img src="img/pcgamer.jpeg" alt="Imagem do produto" />
-          <div class="product-text">
-            <h5>Promoção</h5>
-          </div>
-          <div class="heart-icon">
-            <i class="bx bx-heart"></i>
-          </div>
-          <div class="cart-icon">
-            <i class="bx bx-cart"></i>
-          </div>
-          <div class="rating">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star-half"></i>
-          </div>
-          <div class="price">
-            <p>R$2500 - 3500</p>
-          </div>
+        <div class="center-text">
+            <h2><span>Produtos</span> mais vendidos</h2>
         </div>
 
-        <!-- Produto 3 -->
-        <div class="row">
-          <img src="img/pcgamer.jpeg" alt="Imagem do produto" />
-          <div class="product-text">
-            <h5>Promoção</h5>
-          </div>
-          <div class="heart-icon">
-            <i class="bx bx-heart"></i>
-          </div>
-          <div class="cart-icon">
-            <i class="bx bx-cart"></i>
-          </div>
-          <div class="rating">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star-half"></i>
-          </div>
-          <div class="price">
-            <p>R$2500 - 3500</p>
-          </div>
-        </div>
-
-        <!-- Produto 4 -->
-        <div class="row">
-          <img src="img/pcgamer.jpeg" alt="Imagem do produto" />
-          <div class="product-text">
-            <h5>Promoção</h5>
-          </div>
-          <div class="heart-icon">
-            <i class="bx bx-heart"></i>
-          </div>
-          <div class="cart-icon">
-            <i class="bx bx-cart"></i>
-          </div>
-          <div class="rating">
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star"></i>
-            <i class="bx bxs-star-half"></i>
-          </div>
-          <div class="price">
-            <p>R$2500 - 3500</p>
-          </div>
-        </div>
-      </div>
+        <div class="products" id="produtos"></div> <!-- Contêiner para os produtos -->
     </section>
 
     <footer class="footer">
-      <div class="footer-text">
-        <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
-      </div>
+        <div class="footer-text">
+            <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
+        </div>
     </footer>
-  </body>
+
+    <script src="index.js"></script> <!-- Link para o JavaScript -->
+</body>
 </html>

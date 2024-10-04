@@ -28,6 +28,9 @@ Produtos.init(
     marca: {
       type: DataTypes.STRING
     },
+    imagem: {
+      type: DataTypes.STRING
+    },
 
   },
   {
