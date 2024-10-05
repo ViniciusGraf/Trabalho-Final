@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.20.0",
+    "expres": "^0.0.5",
+    "express": "^4.21.0",
     "introducaonode": "file:",
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3"
-  }
+  },
+  "keywords": []
 }

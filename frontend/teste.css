@@ -154,6 +154,30 @@ body {
   background-color: #f0f0f0; /* Fundo leve ao passar o mouse */
 }
 
+.no-suggestions {
+  padding: 15px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  color: #666; /* Cor do texto */
+  background-color: #f9f9f9; /* Fundo suave */
+  border: 1px dashed #ccc; /* Borda pontilhada */
+  border-radius: 10px; /* Bordas arredondadas */
+  margin: 5px 0; /* Margem superior e inferior */
+  display: flex;
+  flex-direction: column; /* Para empilhar o ícone e o texto */
+  align-items: center; /* Centraliza os itens */
+}
+
+.no-suggestions i {
+  font-size: 40px; /* Tamanho do ícone */
+  color: #f44336; /* Cor do ícone */
+  margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+}
+
+.no-suggestions p {
+  font-size: 16px; /* Tamanho do texto */
+  font-weight: 500; /* Peso do texto */
+}
+
 .user-icon {
   display: flex;
   align-items: center;
@@ -193,7 +217,9 @@ body {
 
 @media (max-width: 768px) {
   .icons {
-    display: inline-flex;
+    display: flex; /* Mudei para flex para permitir a organização vertical */
+    flex-direction: column; /* Itens em coluna para disposição vertical */
+    align-items: center; /* Centraliza os itens na horizontal */
   }
 
   #check:checked ~ .icons #menu-icon {
@@ -213,34 +239,46 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 0;
+    max-height: 0; /* Mantém a altura inicial */
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: height 0.3s;
+    overflow: hidden; /* Mantém os itens invisíveis inicialmente */
+    transition: max-height 0.3s ease; /* Transição de altura */
   }
 
   #check:checked ~ .navbar {
-    height: 17.7rem;
+    max-height: 500px; /* Altura máxima para mostrar todos os itens */
   }
 
+  /* Animação para os itens do menu */
   .navbar a {
-    display: block;
+    display: block; /* Garante que cada item ocupe uma linha */
     font-size: 1.1rem;
     margin: 1.1rem;
     text-align: center;
-    transform: translateY(-50px);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(-20px); /* Inicia acima da posição final */
+    opacity: 0; /* Começa invisível */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animação para transformação e opacidade */
   }
 
+  /* Ao abrir o menu, faz os itens deslizarem para baixo */
   #check:checked ~ .navbar a {
-    transform: translateY(0);
-    opacity: 1;
-    transition-delay: calc(0.15s * var(--i));
+    transform: translateY(0); /* Move para a posição original */
+    opacity: 1; /* Torna visível */
+    transition-delay: calc(0.15s * var(--i)); /* Diferencia o tempo de espera para cada item */
   }
+
+  /* Define a variável de índice para cada item do menu */
+  .navbar a:nth-child(1) { --i: 0; }
+  .navbar a:nth-child(2) { --i: 1; }
+  .navbar a:nth-child(3) { --i: 2; }
+  .navbar a:nth-child(4) { --i: 3; }
+  .navbar a:nth-child(5) { --i: 4; }
 }
+
+
+
 
 /* Estilização da seção principal */
 .main-home {
