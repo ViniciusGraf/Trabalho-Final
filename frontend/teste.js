@@ -1,119 +1,106 @@
-// Função para rolar suavemente para a seção de produtos
-document.querySelector('.main-btn').addEventListener('click', (event) => {
-    event.preventDefault();
-    document.querySelector('#trending').scrollIntoView({ behavior: 'smooth' });
+/* Seleção dos elementos da página */
+const OpenShopping = document.querySelector(".shopping");
+const CloseShopping = document.querySelector(".closeShopping");
+const list = document.querySelector(".list");
+const listCard = document.querySelector(".listCard");
+const total = document.querySelector(".total");
+const body = document.querySelector("body");
+const quantity = document.querySelector(".quantity");
+
+let produtos = [];
+let cart = [];
+
+/* Abrir e fechar o carrinho */
+OpenShopping.addEventListener("click", () => {
+    body.classList.add("active");
 });
 
-// Função para buscar produtos da API
-const fetchProducts = async () => {
-    try {
-        const response = await fetch('http://localhost:3000/api/produtos');
-
-        if (!response.ok) {
-            throw new Error('Erro ao buscar produtos');
-        }
-
-        const data = await response.json();
-        displayProducts(data);
-    } catch (error) {
-        console.error('Erro ao buscar produtos:', error);
-    }
-};
-
-// Função para exibir produtos no DOM
-const displayProducts = (produtos) => {
-    const produtosContainer = document.getElementById('produtos');
-    produtosContainer.innerHTML = ''; // Limpa o conteúdo existente
-
-    produtos.forEach(produto => {
-        const row = document.createElement('div');
-        row.className = 'row';
-        row.innerHTML = `
-            <a href="produtos.html?id=${produto.id}">
-                <img src="${produto.imagem}" alt="${produto.nome}" />
-                <div class="product-text">
-                    <h5>Promoção</h5>
-                </div>
-                <div class="heart-icon">
-                    <i class="bx bx-cart"></i>
-                    <i class="bx bx-heart"></i>
-                </div>
-                <div class="descricao">${produto.nome}</div>
-                <div class="rating">${'<i class="bx bxs-star"></i>'.repeat(5)}</div>
-                <div class="price">
-                    <p>R$ ${produto.preco.toFixed(2)}</p>
-                </div>
-            </a>
-        `;
-        produtosContainer.appendChild(row);
-    });
-};
-
-// Sugestões de busca
-const items = [
-    "Computador",
-    "Laptop",
-    "Teclado Mecânico",
-    "Mouse Gamer",
-    "Headset",
-    "Monitor",
-    "Placa de Vídeo",
-    "Processador",
-    "Memória RAM",
-    "SSD"
-];
-
-// Função para mostrar sugestões de busca
-const showSuggestions = (value) => {
-    const suggestionsContainer = document.getElementById("suggestions");
-    suggestionsContainer.innerHTML = '';
-    if (value.length === 0) return;
-
-    const suggestions = items.filter(item => item.toLowerCase().includes(value.toLowerCase()));
-
-    if (suggestions.length === 0) {
-        const noResults = document.createElement("div");
-        noResults.classList.add("no-suggestions");
-        noResults.innerHTML = `
-            <i class="bx bx-sad"></i>
-            <p>Nenhuma sugestão encontrada.</p>
-        `;
-        suggestionsContainer.appendChild(noResults);
-    } else {
-        suggestions.forEach(item => {
-            const suggestionElement = document.createElement("div");
-            suggestionElement.textContent = item;
-            suggestionElement.classList.add("suggestion");
-            suggestionElement.onclick = () => selectSuggestion(item);
-            suggestionsContainer.appendChild(suggestionElement);
-        });
-    }
-};
-
-// Função para selecionar uma sugestão
-const selectSuggestion = (item) => {
-    document.getElementById("search-input").value = item;
-    document.getElementById("suggestions").innerHTML = '';
-};
-
-// Função para pesquisa
-const search = () => {
-    const input = document.getElementById("search-input").value;
-    alert(`Você pesquisou por: ${input}`);
-};
-
-// Evento de input na barra de pesquisa
-document.getElementById("search-input").addEventListener("input", (event) => {
-    showSuggestions(event.target.value);
+CloseShopping.addEventListener("click", () => {
+    body.classList.remove("active");
 });
 
-// Inicia a busca de produtos quando o DOM estiver totalmente carregado
-document.addEventListener('DOMContentLoaded', () => {
+/* Carregar produtos no DOM */
+document.addEventListener("DOMContentLoaded", () => {
     console.log("Script carregado e DOM totalmente carregado");
-    fetchProducts();
+
+    fetch("http://localhost:3000/api/produtos")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Erro ao buscar produtos");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            produtos = data;
+            produtos.forEach((produto, key) => {
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("item");
+                newDiv.innerHTML = `
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                    <div class="title">${produto.nome}</div>
+                    <div class="price">R$ ${produto.preco.toLocaleString()}</div>
+                    <button onclick="addToCart(${key})">Adicionar ao Carrinho</button>
+                `;
+                // Anexar os cartões dentro da seção trending-product
+                document.querySelector(".products").appendChild(newDiv);
+            });
+        })
+        .catch((error) => console.error("Erro ao buscar produtos:", error));
 });
 
+/* Função para adicionar produtos ao carrinho */
+function addToCart(key) {
+    console.log(`Produto ${key} adicionado ao carrinho`);
 
-document.querySelectorAll('.navbar a').forEach((item, index) => {
-    item.style.setProperty('--i', index);
-});
+    if (cart[key] == null) {
+        cart[key] = {
+            ...produtos[key],
+            quantity: 1
+        };
+    } else {
+        cart[key].quantity += 1;
+    }
+
+    reloadCard();
+}
+
+/* Função para atualizar o card do carrinho */
+const reloadCard = () => {
+    listCard.innerHTML = "";
+    let count = 0;
+    let totalPrice = 0;
+
+    cart.forEach((value, key) => {
+        if (value) {
+            totalPrice += value.preco * value.quantity;
+            count += value.quantity;
+
+            let newDiv = document.createElement("li");
+            newDiv.innerHTML = `
+                <div><img src="${value.imagem}" alt="${value.nome}"></div>
+                <div class="cardTitle">${value.nome}</div>
+                <div class="cardPrice">R$ ${value.preco.toLocaleString()}</div>
+                <div>
+                    <button style="background-color: #560bad" class="cardButton" onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button style="background-color: #560bad" class="cardButton" onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>
+            `;
+            listCard.appendChild(newDiv);
+        }
+    });
+
+    // Atualiza o total formatado
+    total.innerText = `Total: R$ ${totalPrice.toLocaleString()}`;
+    quantity.innerText = count;
+};
+
+/* Função para alterar a quantidade de produtos no carrinho */
+const changeQuantity = (key, quantity) => {
+    if (quantity <= 0) {
+        delete cart[key];
+    } else {
+        cart[key].quantity = quantity;
+    }
+    reloadCard();
+};

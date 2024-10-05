@@ -6,22 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberCores TESTE</title>
     <link rel="stylesheet" href="teste.css" />
-    <link
-        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-        rel="stylesheet"
-    />
-    <link
-        rel="shortcut icon"
-        href="img/CyberCores_circular.png"
-        type="image/x-icon"
-    />
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/CyberCores_circular.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -40,10 +27,16 @@
                 </button>
                 <div class="suggestions" id="suggestions"></div>
             </div>
-            <a href="#" class="user-icon" id="carrinho" title="Carrinho">
-                <i class="bx bxs-cart"></i>
-            </a>
-            <a href="#" class="user-icon" id="coração" title="Favoritos">
+            <div class="container">
+                <header>
+                  <div class="shopping">
+                    <i class="bx bxs-shopping-bag-alt"></i>
+                    <span class="quantity">0</span>
+                  </div>
+                </header>
+                <div class="list"></div>
+              </div>
+            <a href="#" class="user-icon" title="Favoritos">
                 <i class="bx bxs-heart"></i>
             </a>
             <a href="login.html" class="user-icon" title="Perfil">
@@ -51,7 +44,7 @@
                 <span class="user-name">Entrar/Cadastrar-se</span>
             </a>
         </nav>
-    </header>
+    </header>    
 
     <section class="main-home">
         <div class="main-text">
@@ -72,20 +65,29 @@
         <div class="main-image"></div>
     </section>
 
+    <div class="card">
+        <h1>Carrinho</h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="closeShopping">Fechar</div>
+            <button class="btn buy">Comprar</button>
+        </div>
+        <div class="total">Total: R$ 0</div>
+    </div>
+
     <section class="trending-product" id="trending">
         <div class="center-text">
             <h2><span>Produtos</span> mais vendidos</h2>
         </div>
-
+    
         <div class="products" id="produtos"></div> <!-- Contêiner para os produtos -->
-    </section>
+    </section>    
 
     <footer class="footer">
         <div class="footer-text">
             <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
         </div>
     </footer>
-
     <script src="teste.js"></script> <!-- Link para o JavaScript -->
 </body>
 </html>
