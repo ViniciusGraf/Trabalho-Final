@@ -188,7 +188,6 @@ section {
   flex: 1; /* Faz o contêiner ocupar todo o espaço restante */
   height: calc(100vh - 90px); /* Subtrai a altura da navbar */
   margin-top: 90px; /* Altura da navbar */
-  margin-left: 100px;
 }
 
 .card-wrapper {
@@ -244,6 +243,7 @@ img {
   position: relative;
   color: #12263a;
   margin: 1rem 0;
+  width: 150%;
 }
 
 .product-title::after {
