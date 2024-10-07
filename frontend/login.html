@@ -21,13 +21,11 @@
     <!-- Navbar -->
     <header class="header">
       <a href="index.html" class="logo">CyberCores</a>
-
       <input type="checkbox" id="check" />
       <label for="check" class="icons">
         <i class="bx bx-menu" id="menu-icon"></i>
         <i class="bx bxs-x-circle" id="close-icon"></i>
       </label>
-
       <nav class="navbar">
         <a href="#" class="user-icon">
           <i class="bx bxs-cart"></i>
@@ -53,8 +51,9 @@
           </div>
 
           <div class="input-box transition">
-            <input type="password" placeholder="Senha" required />
+            <input type="password" placeholder="Senha" id="senha" required />
             <i class="bx bxs-lock-alt"></i>
+            <i class="bx bx-low-vision" id="togglePassword"></i>
           </div>
 
           <div class="remember-forgot">
@@ -80,22 +79,28 @@
         <div id="registerFormForm">
           <h1>Cadastre-se</h1>
           <div class="input-box">
-            <input type="text" placeholder="Usuário" required id="nome"/>
+            <input type="text" placeholder="Usuário" required id="nome" />
             <i class="bx bxs-user"></i>
           </div>
 
           <div class="input-box transition">
-            <input type="email" placeholder="Email" required id="email"/>
+            <input type="email" placeholder="Email" required id="email" />
             <i class="bx bxs-envelope"></i>
           </div>
 
           <div class="input-box transition">
-            <input type="password" placeholder="Senha" required id="senha"/>
+            <input
+              type="password"
+              placeholder="Senha"
+              required
+              id="senhaR"
+            />
             <i class="bx bxs-lock-alt"></i>
+            <i class="bx bx-low-vision" id="togglePasswordR"></i>
           </div>
 
           <div class="input-box transition">
-            <input type="password" placeholder="Repita a senha" required id="senhaR"/>
+            <input type="password" placeholder="Repita a senha" required id="senhaC" />
             <i class="bx bxs-lock-alt"></i>
           </div>
 
@@ -111,7 +116,7 @@
             <b>Concorde com os termos</b>
           </p>
 
-          <button class="btn color-changing" id="registerButton" onclick="cadastrarUsuarios()">
+          <button class="btn color-changing" id="registerButton">
             Cadastre-se
           </button>
 
