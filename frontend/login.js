@@ -148,3 +148,6 @@ passwordInputR.addEventListener("input", () => {
     passwordInputR.placeholder = "SenhaR";
   }
 });
+
+
+// ! Deixa pra mexer o backend na sala , pra tirar duvida com o prof
