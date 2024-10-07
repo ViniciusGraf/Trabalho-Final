@@ -1,12 +1,245 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
+
+/* Reseta margens, paddings e define a fonte padrão */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f6f6f6;
-  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0; /* Cor de fundo do site */
+}
+
+/* Estilização do header */
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 3%; /* Espaçamento ampliado */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro e semi-transparente */
+  backdrop-filter: blur(15px);
+  transition: 0.5s;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header::before {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.header::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.9), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.header:hover::after {
+  left: 100%;
+}
+
+.logo {
+  font-size: 2rem;
+  color: aliceblue; /* Cor do logo */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo:hover {
+  font-size: 2.02rem; /* Leve aumento do logo ao passar o mouse */
+  color: #560bad;
+  transition: text-shadow 0.3s, font-size 0.2s;
+  text-shadow: 1px 1px 0px white, -1px -1px 0px white, /* sombra superior esquerda */
+               -1px 1px 0px white, 1px -1px 0px white; /* sombra inferior direita */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  font-size: 1.15rem;
+  color: aliceblue; /* Cor dos links da navbar */
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem; /* Espaçamento entre os links */
+  transition: color 0.3s, transform 0.2s; /* Transição suave */
+}
+
+.navbar a:hover {
+  transform: translateY(-2px); /* Eleva o texto ao passar o mouse */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative; /* Para posicionamento da lista de sugestões */
+  margin-right: 2rem; /* Espaço entre a barra de pesquisa e os ícones */
+  margin-left: 2rem; /* Aumentado para mover mais à direita */
+}
+
+.search-input {
+  padding: 0.6rem 1rem; /* Adiciona espaçamento interno */
+  border: none;
+  border-radius: 30px; /* Arredonda as bordas */
+  outline: none; /* Remove a borda padrão */
+  transition: background-color 0.3s; /* Animação de transição */
+  background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo */
+  color: #333; /* Cor do texto */
+  font-size: 1rem; /* Tamanho da fonte */
+  width: 300px; /* Largura da barra de pesquisa */
+}
+
+.search-input::placeholder {
+  color: #aaa; /* Cor do placeholder */
+  opacity: 1; /* Aumenta a opacidade do placeholder */
+}
+
+.search-input:focus {
+  background-color: white; /* Foco na barra de pesquisa */
+}
+
+.search-button {
+  background-color: transparent; /* Remove a cor de fundo do botão */
+  border: none; /* Remove a borda do botão */
+  color: black; /* Altera a cor do ícone da lupa para preto */
+  padding: 0.5rem; /* Adiciona um pouco de espaçamento interno */
+  margin-left: -3rem; /* Ajusta o espaço para que a lupa fique no final do input */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave na cor do botão */
+  font-size: 1.5rem; /* Aumenta o tamanho da lupa */
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%; /* Fica abaixo da barra de pesquisa */
+  left: 0;
+  right: 0;
+  background-color: white; /* Fundo branco para sugestões */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+  z-index: 99; /* Fica acima de outros elementos */
+}
+
+.suggestion {
+  padding: 0.8rem 1rem; /* Espaçamento interno para cada sugestão */
+  cursor: pointer; /* Cursor de pointer ao passar o mouse */
+  transition: background-color 0.3s; /* Transição suave de fundo */
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0; /* Fundo leve ao passar o mouse */
+}
+
+.user-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem; /* Espaçamento entre os ícones */
+  color: aliceblue; /* Cor do ícone definida como aliceblue */
+  text-decoration: none; /* Remove sublinhado dos ícones */
+}
+
+.user-icon i {
+  font-size: 40px; /* Aumentado o tamanho do ícone */
+}
+
+.user-name {
+  font-size: 1.15rem; /* Tamanho da fonte do nome do usuário */
+  color: aliceblue; /* Cor do texto do nome do usuário */
+  margin-left: 0.8rem; /* Espaçamento entre o ícone e o texto */
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 15%; /* Aumentado para mover os ícones mais para a esquerda */
+  font-size: 2.8rem; /* Aumentado o tamanho dos ícones */
+  color: aliceblue; /* Cor dos ícones definida como aliceblue */
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+
+  #check:checked ~ .navbar {
+    height: 17.7rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.1rem;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
 }
 
 body > header {
@@ -93,6 +326,7 @@ table tbody tr td {
 
 .product img {
   border-radius: 6px;
+  width: 150px;
 }
 
 .product .info {
@@ -181,9 +415,8 @@ aside .box {
 }
 
 aside .box header {
-  padding: 15px 20px;
+  padding: 15px 10px;
   font-size: 18px;
-  border-bottom: 1px solid #ccc;
 }
 
 aside .box .info {
@@ -247,3 +480,376 @@ aside > button:hover {
   background: #8857f3;
 }
 /*# sourceMappingURL=styles.css.map */
+
+.info {
+  margin-bottom: 1rem;
+}
+
+.cep-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cep-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cep-input button {
+  background-color: #7a42f5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cep-input button:hover {
+  background-color: #7a42f5;
+}
+
+.remember-cep {
+  font-size: 0.9rem;
+  color: #7a42f5;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.address {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.vendor {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.shipping-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: #7a42f5;
+}
+
+.option input {
+  margin-right: 1rem;
+}
+
+.option-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="radio"] {
+  accent-color: #7a42f5;
+}
+
+/* footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+} */
+
+button.finalizar-compra {
+  width: 100%;
+  background-color: #7a42f5;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button.finalizar-compra:hover {
+  background-color: #7a42f5;
+}
+
+button {
+  background-color: #7a42f5;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  background-color: #6b38e0;
+}
+
+.Icons-title {
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+  border-bottom: 1px solid #ccc;
+}
+
+.Icons-title i {
+  margin-left: 10px;
+  font-size: 24px; /* Tamanho do ícone */
+  color: #7a42f5; /* Cor do ícone (pode ajustar conforme sua preferência) */
+}
+
+.Icons-title header {
+  font-size: 18px;
+  font-weight: bold;
+ }
+
+ .info p {
+  color: #666;
+ }
+
+ /* Estilos do rodapé */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer-text h3 {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: transparent; /* Fundo escuro */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Efeito de blur no fundo */
+/* body.modal-open {
+  filter: blur(5px);
+} */
+
+#paymentModal.modal {
+  backdrop-filter: blur(5px);
+}
+
+/* Botão de fechar o modal */
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container{
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: 60px;
+}
+
+.container form{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.1);
+  padding: 20px;
+  width: 600px;
+  padding-top: 160px;
+}
+
+.container form .inputBox{
+  margin-top: 20px;
+}
+
+.container form .inputBox span{
+  display: block;
+  color:#999;
+  padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border:1px solid rgba(0,0,0,.3);
+  color:#444;
+}
+
+.container form .flexbox{
+  display: flex;
+  gap:15px;
+}
+
+.container form .flexbox .inputBox{
+  flex:1 1 150px;
+}
+
+.container form .submit-btn{
+  width: 100%;
+  background:linear-gradient(45deg, rgb(110, 63, 155), #7a42f5);
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color:#fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.container form .submit-btn:hover{
+  letter-spacing: 2px;
+  opacity: .8;
+}
+
+.container .card-container{
+  margin-bottom: -150px;
+  position: relative;
+  height: 250px;
+  width: 400px;
+}
+
+.container .card-container .front{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0; left: 0;
+  background:linear-gradient(45deg, rgb(110, 63, 155), #7a42f5);
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  padding:20px;
+  transform:perspective(1000px) rotateY(0deg);
+  transition:transform .4s ease-out;
+}
+
+.container .card-container .front .image{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.container .card-container .front .image img{
+  height: 50px;
+}
+
+.container .card-container .front .card-number-box{
+  padding:30px 0;
+  font-size: 22px;
+  color:#fff;
+}
+
+.container .card-container .front .flexbox{
+  display: flex;
+}
+
+.container .card-container .front .flexbox .box:nth-child(1){
+  margin-right: auto;
+}
+
+.container .card-container .front .flexbox .box{
+  font-size: 15px;
+  color:#fff;
+}
+
+.container .card-container .back{
+  position: absolute;
+  top:0; left: 0;
+  height: 100%;
+  width: 100%;
+  background:linear-gradient(45deg, rgb(110, 63, 155), #7a42f5);
+  border-radius: 5px;
+  padding: 20px 0;
+  text-align: right;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  transform:perspective(1000px) rotateY(180deg);
+  transition:transform .4s ease-out;
+}
+
+.container .card-container .back .stripe{
+  background: #000;
+  width: 100%;
+  margin: 10px 0;
+  height: 50px;
+}
+
+.container .card-container .back .box{
+  padding: 0 20px;
+}
+
+.container .card-container .back .box span{
+  color:#fff;
+  font-size: 15px;
+}
+
+.container .card-container .back .box .cvv-box{
+  height: 50px;
+  padding: 10px;
+  margin-top: 5px;
+  color:#333;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.container .card-container .back .box img{
+  margin-top: 30px;
+  height: 30px;
+}
+
