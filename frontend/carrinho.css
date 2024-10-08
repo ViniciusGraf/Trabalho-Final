@@ -15,13 +15,13 @@ body {
     color: #560bad;
 }
 
-.container header {
+.container section {
     display: grid;
     grid-template-columns: 1fr 50px;
     margin-top: 50px;
 }
 
-.container header .shopping {
+.container section .shopping {
     position: relative;
     text-align: right;
 }
