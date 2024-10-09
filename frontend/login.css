@@ -309,6 +309,12 @@ body {
   cursor: pointer;
 }
 
+#togglePasswordC {
+  right: 50px;
+  position: absolute;
+  cursor: pointer;
+}
+
 #error-message {
   color: aliceblue;
   font-size: 14px;

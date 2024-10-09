@@ -58,25 +58,37 @@ function cadastrarUsuarios(event) {
   // Captura os valores dos inputs
   const nome = document.getElementById("nome").value;
   const email = document.getElementById("email").value;
-  const senha = document.getElementById("senhaR").value; // Corrigido para pegar a senha do registro
+  const senhaR = document.getElementById("senhaR").value; // Corrigido para pegar a senha do registro
   const senhaC = document.getElementById("senhaC").value;
 
   // Verifica se as senhas coincidem
-  if (senha === senhaC) {
+  if (senhaR === senhaC) {
     // Cria o objeto com os dados
-    const usuarios = {
+    const Usuarios = {
       nome: nome,
       email: email,
-      senha: senha,
+      senha: senhaR,
     };
 
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  
     // Faz a solicitação POST para o backend
     fetch("http://localhost:3000/api/usuarios", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(usuarios),
+      body: JSON.stringify(Usuarios),
     })
       .then((response) => {
         if (!response.ok) {
@@ -115,6 +127,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.getElementById("togglePasswordC").addEventListener("click", function () {
+  const senhaC = document.getElementById("senhaC");
+  const type = senhaC.getAttribute("type") === "password" ? "text" : "password";
+  senhaC.setAttribute("type", type);
+  this.classList.toggle("bx-low-vision");
+  this.classList.toggle("bx-show");
+});
+
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+  //! NÃO MEXER MAIS NESSA MERDA
+
 // Validação da senha
 const passwordInput = document.getElementById("senha");
 passwordInput.addEventListener("input", () => {
@@ -123,7 +155,7 @@ passwordInput.addEventListener("input", () => {
   // Verifica se a senha tem pelo menos 7 caracteres
   if (passwordValue.length < 7) {
     passwordInput.placeholder = "A senha deve ter no mínimo 7 caracteres";
-  } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordValue)) {
+  } else if (!`/[!@#$%^&*(),.?":{}|<>]/`.test(passwordValue)) {
     // Verifica se contém pelo menos um caractere especial
     passwordInput.placeholder = "A senha deve conter pelo menos um caractere especial";
   } else {
@@ -139,15 +171,15 @@ passwordInputR.addEventListener("input", () => {
 
   // Verifica se a senha tem pelo menos 7 caracteres
   if (passwordValueR.length < 7) {
-    passwordInputR.placeholder = "A senha deve ter no mínimo 7 caracteres";
+    passwordInputR.placeholder = "Mínimo de 7 caracteres";
   } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordValueR)) {
     // Verifica se contém pelo menos um caractere especial
-    passwordInputR.placeholder = "A senha deve conter pelo menos um caractere especial";
+    passwordInputR.placeholder = "Conter um caractere especial";
   } else {
     // Reseta o placeholder se as condições forem atendidas
     passwordInputR.placeholder = "SenhaR";
+    passwordInputR.placeholder = "SenhaC";
   }
 });
-
 
 // ! Deixa pra mexer o backend na sala , pra tirar duvida com o prof

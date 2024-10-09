@@ -74,19 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(produto => {
                 // Atualizar a imagem do produto
+
+                const precoAntigo = (produto.preco * 1.1).toFixed(2);
+
                 const productImage = document.getElementById('produto-imagem');
                 productImage.src = produto.imagem;
-  
+                
+               
+
                 const productContent = document.querySelector('.product-content');
                 productContent.innerHTML = `
                     <h2 class="product-title">${produto.nome}</h2>
                     <a href="#" class="product-link">visite o nosso site</a>
                     <div class="product-rating">
                         ${'<i class="bx bxs-star"></i>'.repeat(5)} 
-                        <span>${produto.rating} (${produto.votos})</span>
-                    </div>
+                        </div>
                     <div class="product-price">
-                        <p class="last-price">Preço antigo: <span>R$${produto.precoAntigo}</span></p>
+                        <p class="last-price">Preço antigo: <span>R$${precoAntigo}</span></p>
                         <p class="new-price">Oferta: <span>R$${produto.preco}</span></p>
                     </div>
                     <div class="product-detail">
@@ -95,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <ul>
                             <li>Disponibilidade: <span>${produto.estoque}</span></li>
                             <li>Categoria: <span>${produto.categoria}</span></li>
-                            <li>Entrega: <span>${produto.entrega}</span></li>
+                            <li>Entrega: <span>Todo Brasil</span></li>
                         </ul>
                     </div>
                     <div class="purchase-info">
@@ -105,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button>
                     </div>
                 `;
+              
+
             })
             .catch(error => console.error('Erro ao buscar detalhes do produto:', error));
     }
