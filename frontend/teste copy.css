@@ -265,95 +265,52 @@ body {
 }
 
 /* Estilização da seção principal */
-.main-home {
-  width: 100vw;
-  height: 75vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.offers-section {
+  padding: 50px;
   background-color: #f0f0f0;
-  position: relative;
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.main-image {
-  flex: 1;
-  background-image: url(img/pc\ tela\ principal.png);
-  background-position: center;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  height: 100%;
+.center-text h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
-.main-text {
-  flex: 1;
-  text-align: left;
-  padding: 2rem;
-  color: #333c56;
-  z-index: 1;
+.offer-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.main-text h5 {
-  color: #7a42f5;
-  font-size: 16px;
-  text-transform: capitalize;
-}
-
-.main-text h1 {
-  color: #000;
-  font-size: 65px;
-  font-family: "Jost", sans-serif;
-  text-transform: capitalize;
-  line-height: 1.1;
-  font-weight: 600;
-  margin: 6px 0 10px;
-}
-
-.main-text p {
-  color: #333c56;
-  font-size: 20px;
-  font-family: "Jost", sans-serif;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.main-btn {
-  display: inline-block;
-  color: #111;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: capitalize;
-  border: 2px solid #111;
-  border-radius: 10px;
-  padding: 12px 25px;
-  transition: all 0.42s ease;
-}
-
-.main-btn:hover {
+.card-item {
   background-color: #000;
-  color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 25%; /* Reduzido o tamanho do card */
+  height: 500px; /* Definida uma altura fixa para controlar o tamanho */
 }
 
-.main-btn i {
-  vertical-align: middle;
+.card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem ainda preencha o espaço */
 }
 
-.down-arrow {
+.offer-text {
   position: absolute;
-  top: 85%;
-  right: 50%;
-  transform: translateX(50%);
-  font-size: 60px;
-  color: #560bad;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  bottom: 0;
+  width: 100%;
+  background-color: #560bad;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Estilos do rodapé */
