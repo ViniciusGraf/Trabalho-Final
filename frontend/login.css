@@ -12,10 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("https://blogger.googleusercontent.com/img/a/AVvXsEi8bUdh_QuEV3gd_nomQ2Z7fYH8jeklX0cR8UYmRnZtsSrcfZHXwrE66ekzlrPlPOhjL2wbOWatNNi7XL0HW0HAtfalqQleST9thJSM6EpPecmXZpC1-FpuFqQubO73lZKhpRcyj2i7My6t6goQ6D6DZLW4OzhDBPzy2TNuvuMfk3G-mvpnCPVlBUxbM5GX=w1600")
-    no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #e0e0e0; /* Cor clara para o fundo */
 }
 
 .header {
@@ -184,9 +181,10 @@ body {
   }
 }
 
+/* cartao de cadastro e de login */
 .wrapper {
   width: 360px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #6a0dadc2; /* Cor roxa */
   padding: 40px;
   border-radius: 10px;
   backdrop-filter: blur(20px);
@@ -203,7 +201,7 @@ body {
 
 .wrapper h1 {
   text-align: center;
-  color: aliceblue;
+  color: #f5f5fa; /* Cor clara para o texto */
   font-weight: 500;
   margin-bottom: 30px;
 }
@@ -216,7 +214,6 @@ body {
 .wrapper .input-box input {
   width: 100%;
   height: 45px;
-  background: rgba(255, 255, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   outline: none;
@@ -231,7 +228,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: aliceblue;
+  color: #6a0dad;
 }
 
 .wrapper .remember-forgot {
@@ -243,14 +240,14 @@ body {
 .wrapper .remember-forgot label {
   display: flex;
   align-items: center;
-  color: aliceblue;
+  color: #f5f5fa; /* Cor clara */
   font-size: 14px;
   white-space: nowrap; /* Impede a quebra de linha */
 }
 
 .wrapper .remember-forgot a {
   text-decoration: none;
-  color: aliceblue;
+  color: #f5f5fa; /* Cor clara */
   font-size: 14px;
 }
 
@@ -262,8 +259,8 @@ body {
 .wrapper button {
   width: 100%;
   height: 45px;
-  background-color: #fff;
-  color: black;
+  background-color: #f5f5fa; /* Botão com cor clara */
+  color: #6a0dad; /* Texto roxo no botão */
   border: none;
   outline: none;
   cursor: pointer;
@@ -274,26 +271,26 @@ body {
 }
 
 .wrapper button:hover {
-  background-color: #02000a;
-  color: aliceblue;
+  background-color: #6a0dad; /* Cor roxa no hover */
+  color: #f5f5fa; /* Texto claro no hover */
   transition: 0.5s;
 }
 
 .wrapper .register-link p {
-  color: aliceblue;
+  color: #f5f5fa; /* Cor clara */
   font-size: 13px;
   text-align: center;
   white-space: nowrap; /* Impede a quebra de linha */
 }
 
 .wrapper .register-link p span {
-  color: aliceblue;
+  color: #f5f5fa; /* Texto claro */
   text-decoration: underline;
   cursor: pointer;
 }
 
 .wrapper .register-link p span:hover {
-  color: aliceblue;
+  color: #f5f5fa;
   transition: 0.2 ease;
 }
 
@@ -316,7 +313,7 @@ body {
 }
 
 #error-message {
-  color: aliceblue;
+  color: rgb(255, 0, 0);
   font-size: 14px;
   display: none;
 }

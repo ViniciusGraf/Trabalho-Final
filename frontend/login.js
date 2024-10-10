@@ -147,23 +147,6 @@ document.getElementById("togglePasswordC").addEventListener("click", function ()
   //! NÃO MEXER MAIS NESSA MERDA
   //! NÃO MEXER MAIS NESSA MERDA
 
-// Validação da senha
-const passwordInput = document.getElementById("senha");
-passwordInput.addEventListener("input", () => {
-  const passwordValue = passwordInput.value;
-
-  // Verifica se a senha tem pelo menos 7 caracteres
-  if (passwordValue.length < 7) {
-    passwordInput.placeholder = "A senha deve ter no mínimo 7 caracteres";
-  } else if (!`/[!@#$%^&*(),.?":{}|<>]/`.test(passwordValue)) {
-    // Verifica se contém pelo menos um caractere especial
-    passwordInput.placeholder = "A senha deve conter pelo menos um caractere especial";
-  } else {
-    // Reseta o placeholder se as condições forem atendidas
-    passwordInput.placeholder = "Senha";
-  }
-});
-
 // Validação da senha de cadastro
 const passwordInputR = document.getElementById("senhaR");
 passwordInputR.addEventListener("input", () => {
