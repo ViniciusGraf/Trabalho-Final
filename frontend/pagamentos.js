@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const tbody = document.querySelector("tbody");
 
-  let precoTotal = 0; precos = 0; frete = 23.68
+
 
   cart.forEach((item, index) => {
     if (item != undefined) {
@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+  let precoTotal = 0; precos = 0;
+  const frete = 23.68;
+
   // Atualizar o total na seção de resumo da compra
   document.querySelector(
     "footer span:nth-child(2)"
@@ -94,6 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(
     "aside span:nth-child(2)" 
   ).innerText = `R$ ${precos.toLocaleString()}`;
+
+  //frete
+  document.querySelector(
+    "aside span:nth-child(3)" 
+  ).innerText = `R$ ${frete.toLocaleString()}`;
 
   // Adicionar evento de clique aos botões de remover
   const removeButtons = document.querySelectorAll(".remove");
@@ -110,8 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       totalPrice -= item.preco * item.quantity;
       document.querySelector(
         "footer span:nth-child(2)"
-      ).innerText = `R$ ${totalPrice.toLocaleString()}`;
-
+      ).innerText = `R$ ${preco.toLocaleString()}`;
+      location.reload();
     });
   });
 });
