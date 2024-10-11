@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const tbody = document.querySelector("tbody");
 
-
+  let precoTotal = 0; precos = 0;
+  const  frete = 23.68;
 
   cart.forEach((item, index) => {
     if (item != undefined) {
@@ -84,10 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
       precoTotal += precos + frete;
     }
   });
-
-
-  let precoTotal = 0; precos = 0;
-  const frete = 23.68;
 
   // Atualizar o total na seção de resumo da compra
   document.querySelector(
