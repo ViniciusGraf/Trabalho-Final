@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const tbody = document.querySelector("tbody");
 
   let precoTotal = 0; precos = 0;
-  const  frete = 23.68;
 
   cart.forEach((item, index) => {
     if (item != undefined) {
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(row);
 
       precos += item.preco * item.quantity; // Calcular o preço total
-      precoTotal += precos + frete;
+      precoTotal += precos + freteSelecionado;
     }
   });
 
@@ -91,15 +90,39 @@ document.addEventListener("DOMContentLoaded", () => {
     "footer span:nth-child(2)"
   ).innerText = `R$ ${precoTotal.toLocaleString()}`;
 
-  // Atualizar o total na seção de resumo da compra
+  // Atualizar o preço na seção de resumo da compra
   document.querySelector(
     "aside span:nth-child(2)" 
   ).innerText = `R$ ${precos.toLocaleString()}`;
+  
+  // Função para atualizar o valor do frete
+function atualizarFrete() {
+  const opcoesFrete = document.querySelectorAll('input[name="shipping"]');
+  let freteSelecionado = 'R$ 0,00'; // Valor padrão caso nenhuma opção esteja selecionada
 
-  //frete
-  document.querySelector(
-    "aside span:nth-child(3)" 
-  ).innerText = `R$ ${frete.toLocaleString()}`;
+  // Percorre as opções para verificar qual está selecionada
+  opcoesFrete.forEach((opcao) => {
+    if (opcao.checked) {
+      // Encontra o preço do frete correspondente
+      freteSelecionado = opcao.parentElement.querySelector('.price').innerText;
+    }
+  });
+
+  // Atualiza o valor do frete no span com id "frete"
+  const spanFrete = document.querySelector("#frete");
+  if (spanFrete) {
+    spanFrete.innerText = freteSelecionado;
+  }
+}
+
+// Adiciona o evento de mudança a todas as opções de frete
+document.querySelectorAll('input[name="shipping"]').forEach((opcao) => {
+  opcao.addEventListener('change', atualizarFrete);
+});
+
+// Chama a função ao carregar a página para mostrar o valor inicial
+atualizarFrete();
+
 
   // Adicionar evento de clique aos botões de remover
   const removeButtons = document.querySelectorAll(".remove");

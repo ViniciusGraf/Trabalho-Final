@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 
 // Configuração do banco de dados
 const dbName = "cybercores";
-const dbUser = "root";
+const dbUser = "vini";
 const dbPassword = "senai";
 const dbHost = "localhost";
 
