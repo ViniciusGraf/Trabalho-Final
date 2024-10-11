@@ -1,285 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="pagamento.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
     <!-- navbar -->
     <header class="header">
-      <a href="#" class="logo">CyberCores</a>
-      <input type="checkbox" id="check" />
-      <label for="check" class="icons">
-          <i class="bx bx-menu" id="menu-icon"></i>
-          <i class="bx bxs-x-circle" id="close-icon"></i>
-      </label>
-          <a href="login.html" class="user-icon" title="Perfil">
-              <i class="bx bxs-user-circle"></i>
-              <span class="user-name">Entrar/Cadastrar-se</span>
-          </a>
-      </nav>
-  </header>
+        <a href="#" class="logo">CyberCores</a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bxs-x-circle" id="close-icon"></i>
+        </label>
+        <a href="login.html" class="user-icon" title="Perfil">
+            <i class="bx bxs-user-circle"></i>
+            <span class="user-name">Entrar/Cadastrar-se</span>
+        </a>
+    </header>
 
+    <!-- Produtos -->
     <main>
-      <div class="page-title">Seu Carrinho</div>
-      <div class="content">
-        <section>
-          <table>
-            <thead>
-              <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-                <th>-</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="product">
-                    <img src="img/pcgamer3.jpeg" alt="" />
-                    <div class="info">
-                      <div class="name">Pc Gamer e blá blá blá blá blá blá blá blá</div>
-                      <div class="category">Categoria</div>
+        <div class="page-title">Seu Carrinho</div>
+        <div class="content">
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+
+            <div>
+                <!-- Preço -->
+                <aside>
+                    <div class="box">
+                        <div class="Icons-title">
+                            <i class='bx bxs-receipt'></i>
+                            <header><strong>Resumo da compra</strong></header>
+                        </div>
+                        <div class="info">
+                            <div><span>Sub-total</span><span>R$ 418</span></div>
+                            <div><span>Frete</span><span>puxa ali de baixo</span></div>
+                            <div>
+                                <button>
+                                    Adicionar cupom de desconto
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <footer>
+                            <span>Total</span>
+                            <span>R$ 418</span>
+                        </footer>
                     </div>
-                  </div>
-                </td>
-                <td>R$ 120</td>
-                <td>
-                  <div class="qty">
-                    <button><i class="bx bx-minus"></i></button>
-                    <span>2</span>
-                    <button><i class="bx bx-plus"></i></button>
-                  </div>
-                </td>
-                <td>R$ 240</td>
-                <td>
-                  <button class="remove"><i class="bx bx-x"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product">
-                    <img src="img/pcgamer.jpeg" alt="" />
-                    <div class="info">
-                      <div class="name">Outro Pc Gamer pq um não é o suficiente</div>
-                      <div class="category">Categoria</div>
+                </aside>
+
+                <!-- Frete -->
+                <aside>
+                    <div class="box">
+                        <div class="Icons-title">
+                            <i class='bx bxs-truck bx-flip-horizontal'></i>
+                            <header><strong>Entrega</strong></header>
+                        </div>
+                        <div class="info">
+                            <p>CEP</p>
+                            <div class="cep-input">
+                                <input type="text" id="cep" placeholder="12345-678" required>
+                                <button type="submit">OK</button>
+                            </div>
+                            <a href="#" class="remember-cep">Não lembro meu CEP</a>
+                            <p class="address">Entregar em: endereço do mano</p>
+                            <p class="vendor">Vendido e entregue por:  <strong> MAX Delivery</strong></p>
+
+                            <div class="shipping-options">
+                                <label class="option">
+                                    <input type="radio" name="shipping" value="express" checked>
+                                    <span class="option-info">
+                                        <strong>Padrão</strong> <br> Chegará até: 6/11/2024
+                                    </span>
+                                    <span class="price">R$ 13,34</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="shipping" value="standard">
+                                    <span class="option-info">
+                                        <strong>Expressa</strong> <br> Chegará até: 22/10/2024
+                                    </span>
+                                    <span class="price">R$ 23,68</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </td>
-                <td>R$ 120</td>
-                <td>
-                  <div class="qty">
-                    <button><i class="bx bx-minus"></i></button>
-                    <span>2</span>
-                    <button><i class="bx bx-plus"></i></button>
-                  </div>
-                </td>
-                <td>R$ 240</td>
-                <td>
-                  <button class="remove"><i class="bx bx-x"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="product">
-                    <img src="img/placa de video 4090.jpg" alt="" />
-                    <div class="info">
-                      <div class="name">Placa de video pq aparentemente os outros dois não tinham</div>
-                      <div class="category">Categoria</div>
-                    </div>
-                  </div>
-                </td>
-                <td>R$ 120</td>
-                <td>
-                  <div class="qty">
-                    <button><i class="bx bx-minus"></i></button>
-                    <span>2</span>
-                    <button><i class="bx bx-plus"></i></button>
-                  </div>
-                </td>
-                <td>R$ 240</td>
-                <td>
-                  <button class="remove"><i class="bx bx-x"></i></button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-        
-        <div>
-        <!-- Preço -->
-        <aside>
-          <div class="box">
-            <div class="Icons-title">
-              <i class='bx bxs-receipt'></i>
-            <header><strong>Resumo da compra</strong></header>
-          </div>
-            <div class="info">
-              <div><span>Sub-total</span><span>R$ 418</span></div>
-              <div><span>Frete</span><span>puxa ali de baixo</span></div>
-              <div>
-                <button>
-                  Adicionar cupom de desconto
-                  <i class="bx bx-right-arrow-alt"></i>
-                </button>
-              </div>
+                    <button class="finalizar-compra">Finalizar Compra</button>
+                </aside>
             </div>
-            <footer>
-              <span>Total</span>
-              <span>R$ 418</span>
-            </footer>
-          </div>
-        </aside>
+        </main>
 
-        <!-- Frete -->
-        <aside>
-          <div class="box">
-            <div class="Icons-title">
-              <i class='bx bxs-truck bx-flip-horizontal' ></i>
-            <header><strong>Entrega</strong></header>
-          </div>
-            <div class="info">
-              <p>CEP</p>
-              <div class="cep-input">
-                <input type="text" id="cep" placeholder="12345-678" required>
-                <button type="submit">OK</button>
-              </div>
-              <a href="#" class="remember-cep">Não lembro meu CEP</a>
-              <p class="address">Entregar em: endereço do mano</p>
-              <p class="vendor">Vendido e entregue por:  <strong> MAX Delivery</strong></p>
-        
-              <div class="shipping-options">
-                <label class="option">
-                  <input type="radio" name="shipping" value="express" checked>
-                  <span class="option-info">
-                    <strong>Padrão</strong> <br> Chegará até: 6/11/2024
-                  </span>
-                  <span class="price">R$ 13,34</span>
-                </label>
-                <label class="option">
-                  <input type="radio" name="shipping" value="standard">
-                  <span class="option-info">
-                    <strong>Expressa</strong> <br> Chegará até: 22/10/2024
-                  </span>
-                  <span class="price">R$ 23,68</span>
-                </label>
-              </div>
+        <footer class="footer">
+            <div class="footer-text">
+                <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
             </div>
-          </div>
-          <button class="finalizar-compra">Finalizar Compra</button>
-        </aside>
-      
-      </div>
-    </main>
+        </footer>
 
-    <footer class="footer">
-      <div class="footer-text">
-          <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
-      </div>
-  </footer>
+        <!-- Tela de pagamento Modal -->
+        <div class="modal" id="paymentModal">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="card-container">
+                        <div class="front">
+                            <div class="image">
+                                <img src="img/chip.png" alt="">
+                                <img src="img/visa.png" alt="">
+                            </div>
+                            <div class="card-number-box">################</div>
+                            <div class="flexbox">
+                                <div class="box">
+                                    <span>Titular do cartão</span>
+                                    <div class="card-holder-name">Nome completo</div>
+                                </div>
+                                <div class="box">
+                                    <span>Expira</span>
+                                    <div class="expiration">
+                                        <span class="exp-month">Mês</span>
+                                        <span class="exp-year">Ano</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-  <!-- Tela de pagamento Modal -->
-<div class="modal" id="paymentModal">
-  <div class="modal-content">
-    <div class="container">
+                        <div class="back">
+                            <div class="stripe"></div>
+                            <div class="box">
+                                <span>CVV</span>
+                                <div class="cvv-box"></div>
+                                <img src="image/visa.png" alt="">
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="card-container">
-  
-          <div class="front">
-              <div class="image">
-                  <img src="img/chip.png" alt="">
-                  <img src="img/visa.png" alt="">
-              </div>
-              <div class="card-number-box">################</div>
-              <div class="flexbox">
-                  <div class="box">
-                      <span>Titular do cartão</span>
-                      <div class="card-holder-name">Nome completo</div>
-                  </div>
-                  <div class="box">
-                      <span>Expira</span>
-                      <div class="expiration">
-                          <span class="exp-month">Mês</span>
-                          <span class="exp-year">Ano</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="back">
-              <div class="stripe"></div>
-              <div class="box">
-                  <span>CVV</span>
-                  <div class="cvv-box"></div>
-                  <img src="image/visa.png" alt="">
-              </div>
-          </div>
-  
-      </div>
-  
-      <form action="">
-          <div class="inputBox">
-              <span>Numero do cartão</span>
-              <input type="text" maxlength="16" class="card-number-input">
-          </div>
-          <div class="inputBox">
-              <span>Titular do cartão</span>
-              <input type="text" class="card-holder-input">
-          </div>
-          <div class="flexbox">
-              <div class="inputBox">
-                  <span>Mês que expira</span>
-                  <select name="" id="" class="month-input">
-                      <option value="month" selected disabled>Mês</option>
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="03">03</option>
-                      <option value="04">04</option>
-                      <option value="05">05</option>
-                      <option value="06">06</option>
-                      <option value="07">07</option>
-                      <option value="08">08</option>
-                      <option value="09">09</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                  </select>
-              </div>
-              <div class="inputBox">
-                  <span>Ano que expira</span>
-                  <select name="" id="" class="year-input">
-                      <option value="year" selected disabled>Ano</option>
-                      <option value="2021">2024</option>
-                      <option value="2022">2025</option>
-                      <option value="2023">2026</option>
-                      <option value="2024">2027</option>
-                      <option value="2025">2028</option>
-                      <option value="2026">2029</option>
-                      <option value="2027">2030</option>
-                      <option value="2028">2031</option>
-                      <option value="2029">2032</option>
-                      <option value="2030">2033</option>
-                  </select>
-              </div>
-              <div class="inputBox">
-                  <span>CVV</span>
-                  <input type="text" maxlength="4" class="cvv-input">
-              </div>
-          </div>
-          <input type="submit" value="submit" class="submit-btn">
-      </form>
-  
-  </div>
+                    <form action="">
+                        <div class="inputBox">
+                            <span>Numero do cartão</span>
+                            <input type="text" maxlength="16" class="card-number-input">
+                        </div>
+                        <div class="inputBox">
+                            <span>Titular do cartão</span>
+                            <input type="text" class="card-holder-input">
+                        </div>
+                        <div class="flexbox">
+                            <div class="inputBox">
+                                <span>Mês que expira</span>
+                                <select name="" id="" class="month-input">
+                                    <option value="month" selected disabled>Mês</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <span>Ano que expira</span>
+                                <select name="" id="" class="year-input">
+                                    <option value="year" selected disabled>Ano</option>
+                                    <option value="2021">2024</option>
+                                    <option value="2022">2025</option>
+                                    <option value="2023">2026</option>
+                                    <option value="2024">2027</option>
+                                    <option value="2025">2028</option>
+                                    <option value="2026">2029</option>
+                                    <option value="2027">2030</option>
+                                    <option value="2028">2031</option>
+                                    <option value="2029">2032</option>
+                                    <option value="2030">2033</option>
+                                </select>
+                            </div>
+                            <div class="inputBox">
+                                <span>CVV</span>
+                                <input type="text" maxlength="4" class="cvv-input">
+                            </div>
+                        </div>
+                        <input type="submit" value="submit" class="submit-btn">
+                    </form>
+                </div>
+            </div>
+        </div>
 
-      <script src="pagamentos.js"></script>
-  </body>
+        <script src="pagamentos.js"></script>
+    </body>
 </html>

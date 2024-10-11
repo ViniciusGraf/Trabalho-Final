@@ -104,3 +104,8 @@ const changeQuantity = (key, quantity) => {
     reloadCard();
 };
 
+// Redirecionar para tela de compra
+document.querySelector(".buy").addEventListener("click", () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "pagamento.html";
+});
