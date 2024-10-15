@@ -27,7 +27,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(15px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  position: relative; /* Fixar o header no topo da página */
+  position: relative; 
   top: 0;
   z-index: 2;
 }
@@ -99,9 +99,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: static; /* Remover o posicionamento relativo */
-  transform: none; /* Remover o translate */
-  margin-left: auto; /* Para alinhar corretamente no layout */
+  position: static; 
+  transform: none; 
+  margin-left: auto; 
   margin-right: 100px;
 }
 
@@ -294,14 +294,14 @@ body {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  width: 25%; /* Reduzido o tamanho do card */
-  height: 500px; /* Definida uma altura fixa para controlar o tamanho */
+  width: 25%; 
+  height: 500px; 
 }
 
 .card-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem ainda preencha o espaço */
+  object-fit: cover; 
 }
 
 .offer-text {
@@ -322,6 +322,7 @@ body {
   background-color: #000;
   color: #fff;
   padding: 20px;
+  margin-top: 10px;
   text-align: center;
   z-index: 999;
 }
@@ -335,43 +336,42 @@ body {
   text-decoration: underline;
 }
 
-
-/* produtos */
-
-/* Estilos para centralização de texto */
+/*!produtos */
+/* Centralização de texto */
 .center-text {
-  text-align: center; /* Centraliza o texto */
-  margin: 20px 0; /* Espaço vertical */
+  text-align: center;
+  margin: 20px 0;
 }
 
 .center-text h2 {
-  font-size: 2.5em; /* Tamanho da fonte maior */
-  font-weight: bold; /* Negrito */
-  color: #333; /* Cor do texto */
-  text-transform: uppercase; /* Texto em maiúsculas */
-  position: relative; /* Para posicionar o pseudo-elemento */
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
 }
 
 .center-text h2 span {
-  color: #560bad; /* Cor chamativa para "Produtos" */
+  color: #560bad;
 }
 
 .center-text h2::after {
-  content: ""; /* Adiciona um pseudo-elemento */
+  content: "";
   display: block;
-  width: 50px; /* Largura da linha abaixo do texto */
-  height: 4px; /* Altura da linha */
-  background: #560bad; /* Cor da linha */
-  margin: 10px auto; /* Centraliza a linha */
+  width: 50px;
+  height: 4px;
+  background: #560bad;
+  margin: 10px auto;
 }
 
-/* Estilos para produtos em destaque */
+/* Produtos em destaque */
 .trending-product {
   background-color: #f0f0f0;
   width: 100%;
 }
 
-/* Estilos para o ícone de compras */
+/* Ícone de compras */
 .shopping {
   position: relative;
   display: inline-block;
@@ -380,19 +380,19 @@ body {
 
 .quantity {
   position: absolute;
-  top: -5px; /* Levanta a posição */
+  top: -5px;
   right: -15px;
-  background-color: #ff0000; /* Cor de fundo da quantidade */
+  background-color: #ff0000;
   color: white;
-  padding: 4px 8px; /* Ajuste de padding */
+  padding: 4px 8px;
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px; /* Largura mínima para garantir um círculo */
-  min-height: 20px; /* Altura mínima para garantir um círculo */
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .shopping i {
@@ -406,7 +406,7 @@ body {
   color: #6f20ca;
 }
 
-/* Estilos para o card de compras */
+/* Card de compras */
 .card {
   position: fixed;
   top: 0;
@@ -425,7 +425,7 @@ body {
 }
 
 .active .card {
-  right: 0; /* Exibe o card */
+  right: 0;
 }
 
 .card h1 {
@@ -435,7 +435,7 @@ body {
   padding: 0 20px;
 }
 
-/* Estilos para checkout */
+/* Checkout */
 .card .checkOut {
   display: flex;
   justify-content: space-between;
@@ -443,7 +443,8 @@ body {
   width: 100%;
 }
 
-.btn, .closeShopping {
+.btn,
+.closeShopping {
   background-color: #560bad;
   color: #fff;
   padding: 15px;
@@ -457,7 +458,8 @@ body {
   text-align: center;
 }
 
-.btn:hover, .closeShopping:hover {
+.btn:hover,
+.closeShopping:hover {
   background-color: #6f20ca;
   transform: scale(1.05);
 }
@@ -470,44 +472,46 @@ body {
   background-color: #c62828;
 }
 
-/* Estilos para a lista de produtos */
+/* Lista de produtos */
 .list .item {
   text-align: center;
   background-color: #efefef;
-  padding: 10px; /* Padding reduzido */
+  padding: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centraliza o conteúdo */
-  height: 320px; /* Altura ajustada */
-  width: 220px; /* Largura ajustada */
-}
+  justify-content: space-between;
+  height: 330px; 
+  width: 220px;  
 
 .list .item img {
-  width: 80%; /* Largura reduzida da imagem */
+  width: 70%; 
   height: auto;
-  max-height: 150px; /* Altura máxima reduzida */
+  max-height: 150px; 
   border-radius: 10px;
-  margin-bottom: 5px; /* Espaço entre imagem e próximo item */
+  margin-bottom: 5px;
 }
 
 .list .item:hover {
-  transform: scale(1.05); /* Efeito de hover */
+  transform: scale(1.05);
 }
 
 .list .item .title {
   font-weight: 600;
-  margin: 1px 0; /* Espaço reduzido */
-  text-align: center; /* Centraliza o título */
-  font-size: 1rem; /* Tamanho do título reduzido */
+  margin: 1px 0;
+  text-align: center;
+  font-size: 1rem;
+  display: -webkit-box;            
+  -webkit-box-orient: vertical;   
+  overflow: hidden;                
 }
 
 .list .item .price {
-  margin: 3px 0;
-  font-size: 1rem; /* Tamanho do preço reduzido */
+  margin: 1px 0;
+  font-size: 1rem;
   font-weight: 500;
   color: #560bad;
   border-radius: 5px;
@@ -516,17 +520,17 @@ body {
 
 .list .item:hover .title,
 .list .item:hover .price {
-  color: #1c1f25; /* Cor de hover */
+  color: #1c1f25;
 }
 
 .list .item button {
   background-color: #efefef;
   color: #560bad;
-  font-size: 0.9rem; /* Tamanho da fonte do botão reduzido */
+  font-size: 0.9rem;
   font-weight: 600;
-  width: 70%; /* Largura do botão ajustada */
-  padding: 8px; /* Padding reduzido */
-  border: 2px solid #560bad; /* Espessura da borda reduzida */
+  width: 70%;
+  padding: 8px;
+  border: 2px solid #560bad;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -535,24 +539,24 @@ body {
 
 .list .item button:hover {
   background-color: #560bad;
-  color: #efefef; /* Cor de hover */
+  color: #efefef;
 }
 
-/* Estilos para a lista de itens do carrinho */
+/* Lista de itens do carrinho */
 .listCard {
   list-style-type: none;
   padding: 0;
   margin: 0;
   max-height: 400px;
-  overflow-y: auto; /* Permite rolagem */
+  overflow-y: auto;
 }
 
 .listCard li {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr; /* Layout em grid */
+  grid-template-columns: 80px 1fr 1fr;
   align-items: center;
   color: #1c1f25;
-  row-gap: 15px; /* Espaço entre linhas */
+  row-gap: 15px;
   margin-bottom: 15px;
   padding: 15px;
   border-bottom: 1px solid #ccc;
@@ -561,7 +565,7 @@ body {
 }
 
 .listCard li:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .listCard li div {
@@ -571,11 +575,11 @@ body {
 }
 
 .listCard li img {
-  width: 100%; /* Imagem responsiva */
+  width: 100%;
   border-radius: 5px;
 }
 
-/* Estilos para contagem e título do card */
+/* Contagem e título do card */
 .count {
   font-size: 1.5rem;
   margin: 3px;
@@ -592,7 +596,7 @@ body {
   font-weight: 500;
 }
 
-/* Estilos para botão de adicionar */
+/* Botão de adicionar */
 .cardButton {
   width: 30px;
   height: 30px;
@@ -611,11 +615,11 @@ body {
 }
 
 .cardButton:hover {
-  background-color: #6f20ca; /* Cor de hover */
+  background-color: #6f20ca;
 }
 
 .card .checkOut {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .listCard li .addMoreButton {
@@ -633,32 +637,31 @@ body {
 }
 
 .listCard li .addMoreButton:hover {
-  background-color: #6f20ca; /* Cor de hover */
+  background-color: #6f20ca;
 }
 
-/* Estilos para total */
+/* Total */
 .total {
   font-size: 1.5rem;
   font-weight: bold;
   color: #560bad;
   margin-top: 20px;
-  text-align: center; /* Centraliza total */
+  text-align: center;
 }
 
-/* Posicao do cartao de protudos*/
-
+/* Posição do cartão de produtos */
 .container h1 {
-    color: #560bad;
+  color: #560bad;
 }
 
 .container div {
-    display: grid;
-    grid-template-columns: 1fr 50px; 
+  display: grid;
+  grid-template-columns: 1fr 50px;
 }
 
 .container .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajuste para se adaptar ao tamanho */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 30px;
 }
@@ -666,34 +669,5 @@ body {
 .container {
   width: 95%;
   margin: auto;
-  transition: 0.5s;
 }
-
-/* Estilos para centralização de texto */
-.center-text {
-  text-align: center; /* Centraliza o texto */
-  margin: 20px 0; /* Espaço vertical */
-}
-
-.center-text h2 {
-  font-size: 2.5em; /* Tamanho da fonte maior */
-  font-weight: bold; /* Negrito */
-  color: #333; /* Cor do texto */
-  text-transform: uppercase; /* Texto em maiúsculas */
-  position: relative; /* Para posicionar o pseudo-elemento */
-  width: 100%; /* Aumenta a largura do título para ocupar 100% do espaço disponível */
-  display: inline-block; /* Permite que a largura do título seja aplicada corretamente */
-}
-
-.center-text h2 span {
-  color: #560bad; /* Cor chamativa para "Produtos" */
-}
-
-.center-text h2::after {
-  content: ""; /* Adiciona um pseudo-elemento */
-  display: block;
-  width: 50px; /* Largura da linha abaixo do texto */
-  height: 4px; /* Altura da linha */
-  background: #560bad; /* Cor da linha */
-  margin: 10px auto; /* Centraliza a linha */
 }
