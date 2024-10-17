@@ -81,7 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     opcoesFrete.forEach((opcao) => {
       if (opcao.checked) {
         valorFrete = parseFloat(
-          opcao.parentElement.querySelector('.price').innerText.replace('R$', '').replace(',', '.')
+          opcao.parentElement
+            .querySelector(".price")
+            .innerText.replace("R$", "")
+            .replace(",", ".")
         );
       }
     });
@@ -89,19 +92,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Atualiza o valor do frete no span com id "frete"
     const spanFrete = document.querySelector("#frete");
     if (spanFrete) {
-      spanFrete.innerText = `R$ ${valorFrete.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+      spanFrete.innerText = `R$ ${valorFrete.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+      })}`;
     }
 
     // Recalcula o preço total com frete
     const precoTotalComFrete = precoTotal + valorFrete;
     document.querySelector(
       "footer span:nth-child(2)"
-    ).innerText = `R$ ${precoTotalComFrete.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+    ).innerText = `R$ ${precoTotalComFrete.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+    })}`;
 
     // Atualiza o preço dos itens na seção de resumo (sem o frete)
     document.querySelector(
       "aside span:nth-child(2)"
-    ).innerText = `R$ ${precoTotal.toLocaleString(undefined, { minimumFractionDigits: 2 })}`; // Mostra apenas o total dos itens
+    ).innerText = `R$ ${precoTotal.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+    })}`; // Mostra apenas o total dos itens
   }
 
   // Renderiza os itens do carrinho na tabela
@@ -136,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const removeButtons = document.querySelectorAll(".remove");
   removeButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      const index = this.closest('tr').rowIndex - 1; // Ajuste o índice para corresponder ao índice do item no carrinho
+      const index = this.closest("tr").rowIndex - 1; // Ajuste o índice para corresponder ao índice do item no carrinho
 
       // Remove o item do array do carrinho
       const itemRemovido = cart.splice(index, 1)[0];
@@ -155,9 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Adiciona o evento de mudança a todas as opções de frete
   document.querySelectorAll('input[name="shipping"]').forEach((opcao) => {
-    opcao.addEventListener('change', atualizarFrete);
+    opcao.addEventListener("change", atualizarFrete);
   });
 });
-
-
-

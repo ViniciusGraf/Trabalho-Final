@@ -15,23 +15,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e0e0e0; /* Cor de fundo do site */
+  background-color: #e0e0e0;
 }
 
-/* Estilização do header */
 .header {
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 1.3rem 3%; /* Espaçamento ampliado */
+  padding: 1.3rem 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro e semi-transparente */
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(15px);
-  transition: 0.5s;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: absolute; /* Mudança de 'relative' para 'fixed' */
+  top: 0;
+  left: 0; /* Adiciona alinhamento à esquerda */
+  z-index: 2;
 }
 
 .header::before,
@@ -65,19 +64,24 @@ body {
   left: 100%;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .logo {
   font-size: 2rem;
-  color: aliceblue; /* Cor do logo */
+  color: aliceblue;
   text-decoration: none;
   font-weight: 700;
+  transition: text-shadow 0.3s, font-size 0.2s;
 }
 
 .logo:hover {
-  font-size: 2.02rem; /* Leve aumento do logo ao passar o mouse */
+  font-size: 2.02rem;
   color: #560bad;
-  transition: text-shadow 0.3s, font-size 0.2s;
-  text-shadow: 1px 1px 0px white, -1px -1px 0px white,
-    /* sombra superior esquerda */ -1px 1px 0px white, 1px -1px 0px white; /* sombra inferior direita */
+  text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, -1px 1px 0px #000,
+    1px -1px 0px #000;
 }
 
 .navbar {
@@ -87,94 +91,114 @@ body {
 
 .navbar a {
   font-size: 1.15rem;
-  color: aliceblue; /* Cor dos links da navbar */
+  color: aliceblue;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 2.5rem; /* Espaçamento entre os links */
-  transition: color 0.3s, transform 0.2s; /* Transição suave */
+  margin-left: 2.5rem;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .navbar a:hover {
-  transform: translateY(-2px); /* Eleva o texto ao passar o mouse */
+  transform: translateY(-2px);
 }
 
 .search-container {
   display: flex;
   align-items: center;
-  position: relative; /* Para posicionamento da lista de sugestões */
-  margin-right: 2rem; /* Espaço entre a barra de pesquisa e os ícones */
-  margin-left: 2rem; /* Aumentado para mover mais à direita */
+  justify-content: center;
+  position: static;
+  transform: none;
 }
 
 .search-input {
-  padding: 0.6rem 1rem; /* Adiciona espaçamento interno */
+  padding: 0.6rem 1rem;
   border: none;
-  border-radius: 30px; /* Arredonda as bordas */
-  outline: none; /* Remove a borda padrão */
-  transition: background-color 0.3s; /* Animação de transição */
-  background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo */
-  color: #333; /* Cor do texto */
-  font-size: 1rem; /* Tamanho da fonte */
-  width: 300px; /* Largura da barra de pesquisa */
-}
-
-.search-input::placeholder {
-  color: #aaa; /* Cor do placeholder */
-  opacity: 1; /* Aumenta a opacidade do placeholder */
-}
-
-.search-input:focus {
-  background-color: white; /* Foco na barra de pesquisa */
+  border-radius: 30px;
+  outline: none;
+  transition: background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  width: 500px;
 }
 
 .search-button {
-  background-color: transparent; /* Remove a cor de fundo do botão */
-  border: none; /* Remove a borda do botão */
-  color: black; /* Altera a cor do ícone da lupa para preto */
-  padding: 0.5rem; /* Adiciona um pouco de espaçamento interno */
-  margin-left: -3rem; /* Ajusta o espaço para que a lupa fique no final do input */
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 0.5rem;
+  margin-left: -3rem;
   cursor: pointer;
-  transition: background-color 0.3s; /* Transição suave na cor do botão */
-  font-size: 1.5rem; /* Aumenta o tamanho da lupa */
+  font-size: 1.5rem;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  background-color: white;
 }
 
 .suggestions {
   position: absolute;
-  top: 100%; /* Fica abaixo da barra de pesquisa */
+  top: 100%;
   left: 0;
   right: 0;
-  background-color: white; /* Fundo branco para sugestões */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
-  z-index: 99; /* Fica acima de outros elementos */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 3;
 }
 
 .suggestion {
-  padding: 0.8rem 1rem; /* Espaçamento interno para cada sugestão */
-  cursor: pointer; /* Cursor de pointer ao passar o mouse */
-  transition: background-color 0.3s; /* Transição suave de fundo */
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .suggestion:hover {
-  background-color: #f0f0f0; /* Fundo leve ao passar o mouse */
+  background-color: #f0f0f0;
+}
+
+.no-suggestions {
+  padding: 15px;
+  text-align: center;
+  color: #666;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.no-suggestions i {
+  font-size: 40px;
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.no-suggestions p {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .user-icon {
   display: flex;
   align-items: center;
-  margin-left: 2rem; /* Espaçamento entre os ícones */
-  color: aliceblue; /* Cor do ícone definida como aliceblue */
-  text-decoration: none; /* Remove sublinhado dos ícones */
+  margin-left: 2rem;
+  color: aliceblue;
+  text-decoration: none;
 }
 
 .user-icon i {
-  font-size: 40px; /* Aumentado o tamanho do ícone */
+  font-size: 40px;
 }
 
 .user-name {
-  font-size: 1.15rem; /* Tamanho da fonte do nome do usuário */
-  color: aliceblue; /* Cor do texto do nome do usuário */
-  margin-left: 0.8rem; /* Espaçamento entre o ícone e o texto */
+  font-size: 1rem;
+  color: aliceblue;
+  margin-left: 0.8rem;
+  white-space: nowrap;
 }
 
 #check {
@@ -183,9 +207,9 @@ body {
 
 .icons {
   position: absolute;
-  right: 15%; /* Aumentado para mover os ícones mais para a esquerda */
-  font-size: 2.8rem; /* Aumentado o tamanho dos ícones */
-  color: aliceblue; /* Cor dos ícones definida como aliceblue */
+  right: 15%;
+  font-size: 2.8rem;
+  color: aliceblue;
   cursor: pointer;
   display: none;
 }
@@ -247,6 +271,77 @@ body {
   }
 }
 
+/* Estilização da seção principal */
+.offers-section {
+  padding: 50px;
+  background-color: #f0f0f0;
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-text h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.offer-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-item {
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 25%;
+  height: 500px;
+}
+
+.card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #560bad;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilos do rodapé */
+.footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+.footer a {
+  color: #560bad;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Compras */
+
 body > header {
   background: #111;
   color: white;
@@ -267,7 +362,6 @@ body > main {
   width: 100%; /* Para garantir que preencha a largura disponível */
   margin: 0 auto; /* Centraliza o main na página */
 }
-
 
 body > main .page-title {
   font-size: 40px;

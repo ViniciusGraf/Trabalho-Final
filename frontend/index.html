@@ -1,117 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberCores</title>
-
     <!-- Estilos -->
     <link rel="stylesheet" href="index.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="shortcut icon"
-      href="img/CyberCores_circular.png"
-      type="image/x-icon"
-    />
-  </head>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="img/CyberCores_circular.png" type="image/x-icon" />
+</head>
 
-  <body>
+<body>
     <header class="header">
-      <a href="#" class="logo">CyberCores</a>
-
-      <input type="checkbox" id="check" />
-      <label for="check" class="icons">
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <i class="bx bxs-x-circle" id="close-icon"></i>
-      </label>
-
-      <nav class="navbar">
-        <div class="search-container">
-          <input
-            type="text"
-            placeholder="Pesquisar..."
-            class="search-input"
-            id="search-input"
-            oninput="showSuggestions(this.value)"
-          />
-          <button type="submit" class="search-button" onclick="search()">
-            <i class="bx bx-search" title="Pesquisa"></i>
-          </button>
-          <div class="suggestions" id="suggestions"></div>
-        </div>
-
-        <section>
-          <div class="shopping">
-            <i class="bx bxs-shopping-bag-alt"></i>
-            <span class="quantity">0</span>
-          </div>
-        </section>
-
-        <a href="#" class="user-icon" title="Favoritos">
-          <i class="bx bxs-heart"></i>
-        </a>
-        <a href="login.html" class="user-icon" title="Perfil">
-          <i class="bx bxs-user-circle"></i>
-          <span class="user-name">Entrar/Cadastrar-se</span>
-        </a>
-      </nav>
+        <a href="index.html" class="logo">CyberCores</a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bxs-x-circle" id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar..." class="search-input" id="search-input" oninput="showSuggestions(this.value)" />
+                <button type="submit" class="search-button" onclick="search()">
+                    <i class="bx bx-search" title="Pesquisa"></i>
+                </button>
+                <div class="suggestions" id="suggestions"></div>
+            </div>
+            <section>
+                <div class="shopping">
+                    <i class="bx bxs-shopping-bag-alt"></i>
+                    <span class="quantity">0</span>
+                </div>
+            </section>
+            <a href="#" class="user-icon" title="Favoritos">
+                <i class="bx bxs-heart"></i>
+            </a>
+            <a href="login.html" class="user-icon" title="Perfil">
+                <i class="bx bxs-user-circle"></i>
+                <span class="user-name">Entrar/Cadastrar-se</span>
+            </a>
+        </nav>
     </header>
 
     <section class="offers-section">
-      <div class="center-text">
-        <h2><span>Ofertas</span> da Semana</h2>
-      </div>
-      <div class="offer-cards">
-        <div class="card-item">
-          <img src="img/pcgamer.jpeg" alt="PC Gamer 1" />
-          <div class="offer-text">Oferta da Semana</div>
+        <div class="center-text">
+            <h2><span>Ofertas</span> da Semana</h2>
         </div>
-        <div class="card-item">
-          <img src="img/pcgamer.jpeg" alt="PC Gamer 2" />
-          <div class="offer-text">Oferta da Semana</div>
+        <div class="offer-cards">
+            <div class="card-item">
+                <img src="img/monitorgamer.jpg" alt="PC Gamer 1" />
+                <div class="offer-text">Oferta da Semana</div>
+            </div>
+            <div class="card-item">
+                <img src="img/pcgamer.jpeg" alt="PC Gamer 2" />
+                <div class="offer-text">Oferta da Semana</div>
+            </div>
+            <div class="card-item">
+                <img src="img/placa de video 4090.jpg" alt="PC Gamer 3" />
+                <div class="offer-text">Oferta da Semana</div>
+            </div>
         </div>
-        <div class="card-item">
-          <img src="img/pcgamer.jpeg" alt="PC Gamer 3" />
-          <div class="offer-text">Oferta da Semana</div>
-        </div>
-      </div>
     </section>
 
     <div class="card">
-      <h1>Carrinho</h1>
-      <ul class="listCard"></ul>
-      <div class="checkOut">
-        <div class="closeShopping">Fechar</div>
-        <button class="btn buy">Comprar</button>
-      </div>
-      <div class="total">Total: R$ 0</div>
+        <h1>Carrinho</h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="closeShopping">Fechar</div>
+            <button class="btn buy">Comprar</button>
+        </div>
+        <div class="total">Total: R$ 0</div>
     </div>
 
     <section class="trending-product" id="trending">
-      <div class="center-text">
-        <h2><span>Produtos</span> mais vendidos</h2>
-      </div>
-      <div class="container">
-        <div class="list"></div>
-      </div>
+        <div class="center-text">
+            <h2><span>Produtos</span> mais vendidos</h2>
+        </div>
+        <div class="container">
+            <div class="list"></div>
+        </div>
     </section>
 
     <footer class="footer">
-      <div class="footer-text">
-        <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
-      </div>
+        <div class="footer-text">
+            <h3>&copy; 2024 CyberCores. Todos os direitos reservados.</h3>
+        </div>
     </footer>
 
     <!-- Scripts -->
     <script src="index.js"></script>
-  </body>
+</body>
 </html>

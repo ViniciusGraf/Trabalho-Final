@@ -6,6 +6,8 @@ const listCard = document.querySelector(".listCard");
 const total = document.querySelector(".total");
 const body = document.querySelector("body");
 const quantity = document.querySelector(".quantity");
+const searchInput = document.getElementById("search-input");
+const suggestionsContainer = document.getElementById("suggestions");
 
 let produtos = [];
 let cart = [];
@@ -74,7 +76,10 @@ const reloadCard = () => {
 
       const newDiv = document.createElement("li");
       newDiv.innerHTML = `
-                <div><img src="${item.imagem}" alt="${item.nome}"></div>
+                
+         href= "index.html "><div><img src="${item.imagem}" alt="${
+        item.nome
+      }"></div>
                 <div class="cardTitle">${item.nome}</div>
                 <div class="cardPrice">R$ ${item.preco.toLocaleString()}</div>
                 <div>
@@ -110,6 +115,26 @@ document.querySelector(".buy").addEventListener("click", () => {
   localStorage.setItem("cart", JSON.stringify(cart));
   window.location.href = "pagamento.html";
 });
+
+// Funções de sugestão de pesquisa
+function showSuggestions(value) {
+  suggestionsContainer.innerHTML = "";
+  if (!value) return;
+
+  const filteredProducts = produtos.filter((produto) =>
+    produto.nome.toLowerCase().includes(value.toLowerCase())
+  );
+
+  filteredProducts.forEach((produto) => {
+    const suggestionItem = document.createElement("div");
+    suggestionItem.textContent = produto.nome;
+    suggestionItem.onclick = () => {
+      searchInput.value = produto.nome;
+      suggestionsContainer.innerHTML = "";
+    };
+    suggestionsContainer.appendChild(suggestionItem);
+  });
+}
 
 // Inicializar a aplicação
 document.addEventListener("DOMContentLoaded", loadProducts);

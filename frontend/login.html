@@ -17,31 +17,35 @@
     />
   </head>
 
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-  <!--! NÃO MEXER MAIS NESSA MERDA -->
-
   <body>
     <!-- Navbar -->
     <header class="header">
       <a href="index.html" class="logo">CyberCores</a>
+
       <input type="checkbox" id="check" />
       <label for="check" class="icons">
         <i class="bx bx-menu" id="menu-icon"></i>
         <i class="bx bxs-x-circle" id="close-icon"></i>
       </label>
+
       <nav class="navbar">
-        <a href="login.html" class="user-icon">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Pesquisar..."
+            class="search-input"
+            id="search-input"
+            oninput="showSuggestions(this.value)"
+          />
+          <button type="submit" class="search-button" onclick="search()">
+            <i class="bx bx-search" title="Pesquisa"></i>
+          </button>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+
+        <a href="login.html" class="user-icon" title="Perfil">
           <i class="bx bxs-user-circle"></i>
-          <span class="user-name">Nome Usuário</span>
+          <span class="user-name">Entrar/Cadastrar-se</span>
         </a>
       </nav>
     </header>
@@ -112,18 +116,6 @@
               do contrato
             </label>
           </div>
-          
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
-          <!--! NÃO MEXER MAIS NESSA MERDA -->
 
           <!-- Mensagem de erro -->
           <p id="error-message" style="display: none">

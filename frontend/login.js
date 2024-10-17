@@ -25,14 +25,16 @@ registerCheckbox.addEventListener("change", () => {
 });
 
 // Impedir o envio do formulário de cadastro se a checkbox não estiver marcada
-document.getElementById("registerFormForm").addEventListener("submit", (event) => {
-  if (!registerCheckbox.checked) {
-    event.preventDefault();
-    errorMessage.style.display = "block";
-  } else {
-    cadastrarUsuarios(event); // Chama a função para cadastrar usuários
-  }
-});
+document
+  .getElementById("registerFormForm")
+  .addEventListener("submit", (event) => {
+    if (!registerCheckbox.checked) {
+      event.preventDefault();
+      errorMessage.style.display = "block";
+    } else {
+      cadastrarUsuarios(event); // Chama a função para cadastrar usuários
+    }
+  });
 
 // Mudança de cor dos botões
 const colorChangingButtons = document.querySelectorAll(".color-changing");
@@ -70,18 +72,18 @@ function cadastrarUsuarios(event) {
       senha: senhaR,
     };
 
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+    //! NÃO MEXER MAIS NESSA MERDA
+
     // Faz a solicitação POST para o backend
     fetch("http://localhost:3000/api/usuarios", {
       method: "POST",
@@ -110,42 +112,51 @@ function cadastrarUsuarios(event) {
 
 // Olhar a senha
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("togglePassword").addEventListener("click", function () {
-    const senha = document.getElementById("senha");
-    const type = senha.getAttribute("type") === "password" ? "text" : "password";
-    senha.setAttribute("type", type);
+  document
+    .getElementById("togglePassword")
+    .addEventListener("click", function () {
+      const senha = document.getElementById("senha");
+      const type =
+        senha.getAttribute("type") === "password" ? "text" : "password";
+      senha.setAttribute("type", type);
+      this.classList.toggle("bx-low-vision");
+      this.classList.toggle("bx-show");
+    });
+
+  document
+    .getElementById("togglePasswordR")
+    .addEventListener("click", function () {
+      const senhaR = document.getElementById("senhaR");
+      const type =
+        senhaR.getAttribute("type") === "password" ? "text" : "password";
+      senhaR.setAttribute("type", type);
+      this.classList.toggle("bx-low-vision");
+      this.classList.toggle("bx-show");
+    });
+});
+
+document
+  .getElementById("togglePasswordC")
+  .addEventListener("click", function () {
+    const senhaC = document.getElementById("senhaC");
+    const type =
+      senhaC.getAttribute("type") === "password" ? "text" : "password";
+    senhaC.setAttribute("type", type);
     this.classList.toggle("bx-low-vision");
     this.classList.toggle("bx-show");
   });
 
-  document.getElementById("togglePasswordR").addEventListener("click", function () {
-    const senhaR = document.getElementById("senhaR");
-    const type = senhaR.getAttribute("type") === "password" ? "text" : "password";
-    senhaR.setAttribute("type", type);
-    this.classList.toggle("bx-low-vision");
-    this.classList.toggle("bx-show");
-  });
-});
-
-document.getElementById("togglePasswordC").addEventListener("click", function () {
-  const senhaC = document.getElementById("senhaC");
-  const type = senhaC.getAttribute("type") === "password" ? "text" : "password";
-  senhaC.setAttribute("type", type);
-  this.classList.toggle("bx-low-vision");
-  this.classList.toggle("bx-show");
-});
-
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
-  //! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
+//! NÃO MEXER MAIS NESSA MERDA
 
 // Validação da senha de cadastro
 const passwordInputR = document.getElementById("senhaR");
