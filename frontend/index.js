@@ -77,7 +77,7 @@ const reloadCard = () => {
       const newDiv = document.createElement("li");
       newDiv.innerHTML = `
                 
-         href= "index.html "><div><img src="${item.imagem}" alt="${
+         <div><img src="${item.imagem}" alt="${
         item.nome
       }"></div>
                 <div class="cardTitle">${item.nome}</div>
